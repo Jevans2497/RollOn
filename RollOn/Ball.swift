@@ -8,16 +8,19 @@
 
 import SpriteKit
 
-class Ball: SKNode {
+class Ball: SKSpriteNode {
     
-    init(color: String, position: CGPoint) {
-        super.init()
-        let ball = SKSpriteNode(imageNamed: "ball\(color)")
-        ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
-        ball.physicsBody?.isDynamic = false
-        ball.physicsBody?.restitution = 0.5
-        ball.position = position
-        ball.name = "\(color) \(UUID().uuidString)"
+    init(ballColor: String) {
+        let texture = SKTexture(imageNamed: "ball\(ballColor)")
+        let color = UIColor.clear
+        let size = texture.size()
+
+        super.init(texture: texture, color: color, size: size)
+        
+        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
+        physicsBody?.isDynamic = false
+        physicsBody?.restitution = 0.5
+        name = "\(ballColor)_ball_\(UUID().uuidString)"
     }
     
     required init?(coder aDecoder: NSCoder) {
