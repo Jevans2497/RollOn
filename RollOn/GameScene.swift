@@ -2,8 +2,12 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    var balls: Array<Ball> = Array()
+    var currentBall: Ball? = nil
+    
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
+        physicsWorld.gravity = .zero
         setupBackground()
         setupLevel1()
     }
@@ -21,37 +25,43 @@ class GameScene: SKScene {
         let position = CGPoint(x: 150 + leftmost, y: 0.0)
         let ball = Ball(ballColor: "Blue")
         ball.position = position
+        
+        let positionTheSecond = CGPoint(x: 300, y: 0.0)
+        let ballTheSecond = Ball(ballColor: "Red")
+        ballTheSecond.position = positionTheSecond
+        
+        balls.append(ball)
+        balls.append(ballTheSecond)
         addChild(ball)
+        addChild(ballTheSecond)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
-            if let object = nodes(at: location).first {
-                handleTouchByObjectType(object: object)
+            if let object = nodes(at: location).first as? Ball {
+                let ball = balls.first(where: { $0.name == object.name } )
+                ball?.startLocation = location
+                currentBall = ball
             }
         }
     }
     
-    func handleTouchByObjectType(object: Any) {
-        if let ball = object as? Ball {
-            ballTouched(ball: ball)
-        }
-    }
-    
-    func ballTouched(ball: Ball) {
-        if let ballColor = ball.name?.split(separator: "_").first {
-            switch ballColor {
-            case "Blue":
-                blueBallTouched(ball: ball)
-            default:
-                print("Something else")
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let location = touch.location(in: self)
+            if currentBall != nil {
+                let ball = balls.first(where: { $0.name == currentBall?.name } )
+                ball?.endLocation = location
+                currentBall = nil
             }
         }
+        startSimulation()
     }
     
-    func blueBallTouched(ball: Ball) {
-        ball.physicsBody?.isDynamic = true
-        
+    func startSimulation() {
+        for ball in balls {
+            ball.simulate()
+        }
     }
 }
