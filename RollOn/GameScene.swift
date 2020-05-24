@@ -41,6 +41,7 @@ class GameScene: SKScene {
             let location = touch.location(in: self)
             if let object = nodes(at: location).first as? Ball {
                 let ball = balls.first(where: { $0.name == object.name } )
+                ball?.physicsBody?.isDynamic = false
                 ball?.startLocation = location
                 currentBall = ball
             }
