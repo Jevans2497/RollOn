@@ -50,25 +50,27 @@ class GameScene: SKScene {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-            
         if let touch = touches.first {
             if let cb = currentBall {
                 cb.arrow.touchLocation = touch.location(in: self)
                 let drawnArrow = cb.arrow
-                print("===============")
-                print(drawnArrow.name)
-                if let node = childNode(withName: drawnArrow.name!) {
-                    removeChildren(in: [node])
-                }
-                drawnArrow.name = drawnArrow.name!
+                removeArrow(arrowName: drawnArrow.name!)
                 addChild(drawnArrow)
             }
         }
     }
     
-    func removePreexistingArrows() {
-        
+    private func removeArrow(arrowName: String) {
+        if let node = childNode(withName: arrowName) {
+            removeChildren(in: [node])
+        }
+    }
+    
+    private func removeAllPreexistingArrows() {
+        for ball in balls {
+            let arrowName = ball.arrow.name!
+            removeArrow(arrowName: arrowName)
+        }
     }
         
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -80,6 +82,7 @@ class GameScene: SKScene {
                 currentBall = nil
             }
         }
+        removeAllPreexistingArrows()
         startSimulation()
     }
     
