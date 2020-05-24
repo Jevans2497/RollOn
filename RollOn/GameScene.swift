@@ -14,6 +14,7 @@ class GameScene: SKScene {
     
     func setupBackground() {
         let background = SKSpriteNode(imageNamed: "mountain.png")
+        background.name = "background"
         background.position = CGPoint(x: 0, y: 0)
         background.blendMode = .replace
         background.zPosition = -1
@@ -48,6 +49,24 @@ class GameScene: SKScene {
         }
     }
     
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if let cb = currentBall {
+            if let node = childNode(withName: "arrow") {
+                removeChildren(in: [node])
+            }
+        }
+            
+        if let touch = touches.first {
+            if let cb = currentBall {
+                cb.arrow.touchLocation = touch.location(in: self)
+                let drawnArrow = cb.arrow
+                drawnArrow.name = "arrow"
+                addChild(drawnArrow)
+            }
+        }
+    }
+        
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
