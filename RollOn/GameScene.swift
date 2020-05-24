@@ -4,11 +4,20 @@ class GameScene: SKScene {
     
     var balls: Array<Ball> = Array()
     var currentBall: Ball? = nil
+    var startLabel: SKLabelNode!
     
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsWorld.gravity = .zero
+        setLevelToStart()
+    }
+    
+    func setLevelToStart() {
+        removeAllChildren()
+        balls.removeAll()
+        currentBall = nil
         setupBackground()
+        setupStartLabel()
         setupLevel1()
     }
     
@@ -19,6 +28,13 @@ class GameScene: SKScene {
         background.blendMode = .replace
         background.zPosition = -1
         addChild(background)
+    }
+    
+    func setupStartLabel() {
+        startLabel = SKLabelNode(fontNamed: "Chalkduster")
+        startLabel.text = "Start"
+        startLabel.position = CGPoint(x: 0.0, y: 0.0)
+        addChild(startLabel)
     }
     
     func setupLevel1() {
@@ -40,11 +56,15 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
-            if let object = nodes(at: location).first as? Ball {
-                let ball = balls.first(where: { $0.name == object.name } )
-                ball?.physicsBody?.isDynamic = false
-                ball?.startLocation = ball?.position!
-                currentBall = ball
+            if nodes(at: location).contains(startLabel) {
+                startOrReset()
+            } else {
+                if let object = nodes(at: location).first as? Ball {
+                    let ball = balls.first(where: { $0.name == object.name } )
+                    ball?.physicsBody?.isDynamic = false
+                    ball?.startLocation = ball?.position as! CGPoint
+                    currentBall = ball
+                }
             }
         }
     }
@@ -82,11 +102,16 @@ class GameScene: SKScene {
                 currentBall = nil
             }
         }
-        removeAllPreexistingArrows()
-        startSimulation()
+    }
+    
+    func startOrReset() {
+        let shouldStart = startLabel.text == "Start"
+        shouldStart ? startSimulation() : setLevelToStart()
     }
     
     func startSimulation() {
+        startLabel.text = "Reset"
+        removeAllPreexistingArrows()
         for ball in balls {
             ball.simulate()
         }
