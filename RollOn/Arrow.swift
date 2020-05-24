@@ -36,16 +36,3 @@ class Arrow: SKShapeNode {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-//var yourline = SKShapeNode()
-//var pathToDraw = CGMutablePath()
-//let location = touch.location(in: self)
-//if let cb = currentBall {
-//    pathToDraw.move(to: cb.startLocation)
-//    pathToDraw.addLine(to: location)
-//    yourline.path = pathToDraw
-//    yourline.strokeColor = SKColor.red
-//    yourline.lineWidth = 5.0
-//    yourline.name = "arrow"
-//    addChild(yourline)
-//}

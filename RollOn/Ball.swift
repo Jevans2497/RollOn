@@ -32,7 +32,7 @@ class Ball: SKSpriteNode {
         
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
         physicsBody?.restitution = 0.8
-        name = "\(ballColor)ball)"
+        name = "\(ballColor)ball"
         arrow.name! += name!
     }
     
