@@ -1,8 +1,9 @@
 import SpriteKit
 
-let BallCategory  : UInt32 = 0x1 << 1
 let GoalCategory: UInt32 = 0x1 << 2
 let WallCategory: UInt32 = 0x1 << 3
+let HeroBallCategory: UInt32 = 0x1 << 4
+let BombBallCategory: UInt32 = 0x1 << 5
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -45,21 +46,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func setupLevel1() {
         let leftmost = (UIScreen.main.bounds.height / 2.0) * -1
         let position = CGPoint(x: 150 + leftmost, y: 0.0)
-        let ball = Ball(ballColor: "Blue")
-        ball.position = position
+        let hero = HeroBall()
+        hero.position = position
         
-        let positionTheSecond = CGPoint(x: 300, y: 0.0)
-        let ballTheSecond = Ball(ballColor: "Red")
-        ballTheSecond.position = positionTheSecond
+        let bombPosition = CGPoint(x: 300, y: 0.0)
+        let bombBall = BombBall()
+        bombBall.position = bombPosition
         
-        balls.append(ball)
-        balls.append(ballTheSecond)
-        addChild(ball)
-        addChild(ballTheSecond)
+        balls.append(hero)
+        balls.append(bombBall)
+        addChild(hero)
+        addChild(bombBall)
         
         let goal = Goal()
         goal.position = CGPoint(x: 0.0, y: 0.0)
         addChild(goal)
+        
+        let toggleSwitch = ToggleSwitch(color: UIColor.blue)
+        toggleSwitch.position = CGPoint(x: 0.0, y: 150.0)
+        addChild(toggleSwitch)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

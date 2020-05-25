@@ -15,6 +15,9 @@
 		AA7A812E247991A20028D100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7A812D247991A20028D100 /* Assets.xcassets */; };
 		AA7A8131247991A20028D100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7A812F247991A20028D100 /* LaunchScreen.storyboard */; };
 		AA7A813924799B220028D100 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A813824799B220028D100 /* Ball.swift */; };
+		AA847BD9247C0CAB0037CC16 /* HeroBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BD8247C0CAB0037CC16 /* HeroBall.swift */; };
+		AA847BDB247C13740037CC16 /* BombBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BDA247C13740037CC16 /* BombBall.swift */; };
+		AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BE2247C259B0037CC16 /* ToggleSwitch.swift */; };
 		AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */; };
 		AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +33,9 @@
 		AA7A8130247991A20028D100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA7A8132247991A20028D100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA7A813824799B220028D100 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		AA847BD8247C0CAB0037CC16 /* HeroBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroBall.swift; sourceTree = "<group>"; };
+		AA847BDA247C13740037CC16 /* BombBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BombBall.swift; sourceTree = "<group>"; };
+		AA847BE2247C259B0037CC16 /* ToggleSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSwitch.swift; sourceTree = "<group>"; };
 		AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,8 +72,11 @@
 			children = (
 				AA7A81262479919E0028D100 /* GameScene.swift */,
 				AA7A813824799B220028D100 /* Ball.swift */,
+				AA847BD8247C0CAB0037CC16 /* HeroBall.swift */,
+				AA847BDA247C13740037CC16 /* BombBall.swift */,
 				AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */,
 				AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */,
+				AA847BE2247C259B0037CC16 /* ToggleSwitch.swift */,
 				AA7A812D247991A20028D100 /* Assets.xcassets */,
 				AA7A81202479919E0028D100 /* AppDelegate.swift */,
 				AA7A81222479919E0028D100 /* GameScene.sks */,
@@ -155,8 +164,11 @@
 				AA7A81272479919E0028D100 /* GameScene.swift in Sources */,
 				AA7A81292479919E0028D100 /* GameViewController.swift in Sources */,
 				AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */,
+				AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */,
+				AA847BDB247C13740037CC16 /* BombBall.swift in Sources */,
 				AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */,
 				AA7A81212479919E0028D100 /* AppDelegate.swift in Sources */,
+				AA847BD9247C0CAB0037CC16 /* HeroBall.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

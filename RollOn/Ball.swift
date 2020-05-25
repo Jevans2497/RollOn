@@ -35,11 +35,7 @@ class Ball: SKSpriteNode {
     }
     
     func setupPhysicsBody() {
-        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
-        physicsBody?.restitution = 0.8
-        physicsBody?.categoryBitMask = BallCategory
-        physicsBody?.contactTestBitMask = GoalCategory
-        physicsBody?.collisionBitMask = BallCategory | WallCategory
+        //Should always be overridden
     }
     
     required init?(coder aDecoder: NSCoder) {
