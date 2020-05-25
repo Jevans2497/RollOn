@@ -40,8 +40,6 @@ class ToggleSwitch : SKShapeNode {
             return ToggleSwitchBlueCategory
         case .Bomb:
             return ToggleSwitchRedCategory
-        default:
-            return ToggleSwitchBlueCategory
         }
     }
     
@@ -51,8 +49,6 @@ class ToggleSwitch : SKShapeNode {
             return HeroBallCategory
         case .Bomb:
             return BombBallCategory
-        default:
-            return HeroBallCategory
         }
     }
     
@@ -70,8 +66,6 @@ class ToggleSwitch : SKShapeNode {
             return UIColor.blue
         case .Bomb:
             return UIColor.red
-        default:
-            return UIColor.black
         }
     }
 }

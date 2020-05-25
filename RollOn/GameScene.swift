@@ -144,22 +144,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         guard let nodeA = contact.bodyA.node else { return }
         guard let nodeB = contact.bodyB.node else { return }
         
-        if let nodeAIsBall = nodeA.name?.contains("ball"), let nodeBIsBall = nodeB.name?.contains("ball") {
-            //Because the contact test masks are set not to detect ball to ball collisions, we don't need to check for it
-            if nodeAIsBall {
-                collisionOccured(ball: nodeA as! Ball, otherObject: nodeB)
-            } else if nodeBIsBall {
-                collisionOccured(ball: nodeB as! Ball, otherObject: nodeA)
-            }
-        }
-    }
-    
-    func collisionOccured(ball: Ball, otherObject: SKNode) {
-        if otherObject.name == "goal" { goalReached(ball: ball)}
-    }
-    
-    func goalReached(ball: Ball) {
-        ball.inGoal()
+        let collisionManager = CollisionManager(nodeA: nodeA, nodeB: nodeB)
+        collisionManager.handleCollision()
     }
     
     private func removeArrow(arrowName: String) {

@@ -18,6 +18,7 @@
 		AA847BD9247C0CAB0037CC16 /* HeroBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BD8247C0CAB0037CC16 /* HeroBall.swift */; };
 		AA847BDB247C13740037CC16 /* BombBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BDA247C13740037CC16 /* BombBall.swift */; };
 		AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BE2247C259B0037CC16 /* ToggleSwitch.swift */; };
+		AA847BE5247C3D720037CC16 /* CollisionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BE4247C3D720037CC16 /* CollisionManager.swift */; };
 		AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */; };
 		AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		AA847BD8247C0CAB0037CC16 /* HeroBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroBall.swift; sourceTree = "<group>"; };
 		AA847BDA247C13740037CC16 /* BombBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BombBall.swift; sourceTree = "<group>"; };
 		AA847BE2247C259B0037CC16 /* ToggleSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSwitch.swift; sourceTree = "<group>"; };
+		AA847BE4247C3D720037CC16 /* CollisionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionManager.swift; sourceTree = "<group>"; };
 		AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				AA7A81262479919E0028D100 /* GameScene.swift */,
+				AA847BE4247C3D720037CC16 /* CollisionManager.swift */,
 				AA7A813824799B220028D100 /* Ball.swift */,
 				AA847BD8247C0CAB0037CC16 /* HeroBall.swift */,
 				AA847BDA247C13740037CC16 /* BombBall.swift */,
@@ -162,6 +165,7 @@
 			files = (
 				AA7A813924799B220028D100 /* Ball.swift in Sources */,
 				AA7A81272479919E0028D100 /* GameScene.swift in Sources */,
+				AA847BE5247C3D720037CC16 /* CollisionManager.swift in Sources */,
 				AA7A81292479919E0028D100 /* GameViewController.swift in Sources */,
 				AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */,
 				AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */,
