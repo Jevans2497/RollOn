@@ -13,6 +13,8 @@ class BombBall: Ball {
     
     init() {
         super.init(ballColor: "Red")
+        name = "\(BallType.Bomb)ball"
+        arrow.name! += name!
     }
     
     required init?(coder aDecoder: NSCoder) {

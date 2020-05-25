@@ -25,13 +25,9 @@ class Ball: SKSpriteNode {
         startLocation = CGPoint(x: 0, y: 0)
         endLocation = CGPoint(x: 0, y: 0)
         arrow = Arrow()
-
         super.init(texture: texture, color: color, size: size)
-        
-        setupPhysicsBody()
-        name = "\(ballColor)ball"
-        arrow.name! += name!
         zPosition = 50
+        setupPhysicsBody()
     }
     
     func setupPhysicsBody() {

@@ -13,6 +13,8 @@ class HeroBall: Ball {
     
     init() {
         super.init(ballColor: "Blue")
+        name = "\(BallType.Hero)ball"
+        arrow.name! += name!
     }
     
     required init?(coder aDecoder: NSCoder) {
