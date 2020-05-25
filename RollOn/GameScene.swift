@@ -15,6 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var currentBall: Ball? = nil
     var startAndResetLabel: SKLabelNode!
     var level = LevelOne()
+    let toggleSwitchCounter = ToggleSwitchCounter()
     
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
@@ -45,10 +46,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for object in level.allObjects {
             let node = object as! SKNode
             addChild(node)
-            if let isBall = node.name?.contains("ball") {
-                if isBall { balls.append(node as! Ball) }
-            }
+            setupByName(node: node)
         }
+    }
+    
+    func setupByName(node: SKNode) {
+        guard let name = node.name else { return }
+        if name.contains("ball") {
+             setupBall(ball: node as! Ball)
+        } else if name.contains("toggleSwitch") {
+            setupToggleSwitch(toggleSwitch: node as! ToggleSwitch)
+        }
+    }
+    
+    func setupBall(ball: Ball) {
+        balls.append(ball)
+    }
+    
+    func setupToggleSwitch(toggleSwitch: ToggleSwitch) {
+        toggleSwitchCounter.increment(ballType: toggleSwitch.acceptedBallType)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
