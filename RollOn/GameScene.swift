@@ -14,6 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var balls: Array<Ball> = Array()
     var currentBall: Ball? = nil
     var startAndResetLabel: SKLabelNode!
+    var level = LevelOne()
     
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
@@ -28,6 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         currentBall = nil
         setupBackground()
         setupStartLabel()
+        level.allObjects.removeAll()
         setupLevel1()
     }
     
@@ -48,31 +50,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupLevel1() {
-        let leftmost = (UIScreen.main.bounds.height / 2.0) * -1
-        let position = CGPoint(x: 150 + leftmost, y: 0.0)
-        let hero = HeroBall()
-        hero.position = position
-        
-        let bombPosition = CGPoint(x: 300, y: 0.0)
-        let bombBall = BombBall()
-        bombBall.position = bombPosition
-        
-        balls.append(hero)
-        balls.append(bombBall)
-        addChild(hero)
-        addChild(bombBall)
-        
-        let goal = Goal()
-        goal.position = CGPoint(x: 0.0, y: 0.0)
-        addChild(goal)
-        
-        let blueToggleSwitch = ToggleSwitch(acceptedBallType: .Hero)
-        blueToggleSwitch.position = CGPoint(x: 0.0, y: 150.0)
-        addChild(blueToggleSwitch)
-        
-        let redToggleSwitch = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch.position = CGPoint(x: 0.0, y: -150.0)
-        addChild(redToggleSwitch)
+        level.setupLevel()
+        for object in level.allObjects {
+            let node = object as! SKNode
+            addChild(node)
+            if let isBall = node.name?.contains("ball") {
+                if isBall { balls.append(node as! Ball) }
+            }
+//            do {
+//                let ball = object as! Ball
+//                balls.append(ball)
+//            } catch { // do nothing}
+        }
+//        let leftmost = (UIScreen.main.bounds.height / 2.0) * -1
+//        let position = CGPoint(x: 150 + leftmost, y: 0.0)
+//        let hero = HeroBall()
+//        hero.position = position
+//
+//        let bombPosition = CGPoint(x: 300, y: 0.0)
+//        let bombBall = BombBall()
+//        bombBall.position = bombPosition
+//
+//        balls.append(hero)
+//        balls.append(bombBall)
+//        addChild(hero)
+//        addChild(bombBall)
+//
+//        let goal = Goal()
+//        goal.position = CGPoint(x: 0.0, y: 0.0)
+//        addChild(goal)
+//
+//        let blueToggleSwitch = ToggleSwitch(acceptedBallType: .Hero)
+//        blueToggleSwitch.position = CGPoint(x: 0.0, y: 150.0)
+//        addChild(blueToggleSwitch)
+//
+//        let redToggleSwitch = ToggleSwitch(acceptedBallType: .Bomb)
+//        redToggleSwitch.position = CGPoint(x: 0.0, y: -150.0)
+//        addChild(redToggleSwitch)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
