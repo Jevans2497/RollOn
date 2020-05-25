@@ -23,7 +23,7 @@ class Goal: SKSpriteNode {
     }
     
     func setupPhysicsBody() {
-        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
+        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 4.0)
         physicsBody?.isDynamic = false
         physicsBody?.categoryBitMask = GoalCategory
         physicsBody?.contactTestBitMask = BallCategory
