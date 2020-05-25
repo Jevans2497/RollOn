@@ -32,6 +32,7 @@ class Arrow: SKShapeNode {
         path = pathToDraw
         strokeColor = SKColor.red
         lineWidth = 5.0
+        zPosition = 40
     }
     
     func drawArrowWings() {

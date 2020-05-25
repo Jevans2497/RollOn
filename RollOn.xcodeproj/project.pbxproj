@@ -16,6 +16,7 @@
 		AA7A8131247991A20028D100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7A812F247991A20028D100 /* LaunchScreen.storyboard */; };
 		AA7A813924799B220028D100 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A813824799B220028D100 /* Ball.swift */; };
 		AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */; };
+		AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AA7A8132247991A20028D100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA7A813824799B220028D100 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
+		AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,16 +64,17 @@
 		AA7A811F2479919E0028D100 /* RollOn */ = {
 			isa = PBXGroup;
 			children = (
-				AA7A81202479919E0028D100 /* AppDelegate.swift */,
-				AA7A81222479919E0028D100 /* GameScene.sks */,
 				AA7A81262479919E0028D100 /* GameScene.swift */,
-				AA7A81282479919E0028D100 /* GameViewController.swift */,
-				AA7A812A2479919E0028D100 /* Main.storyboard */,
-				AA7A812D247991A20028D100 /* Assets.xcassets */,
-				AA7A812F247991A20028D100 /* LaunchScreen.storyboard */,
-				AA7A8132247991A20028D100 /* Info.plist */,
 				AA7A813824799B220028D100 /* Ball.swift */,
 				AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */,
+				AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */,
+				AA7A812D247991A20028D100 /* Assets.xcassets */,
+				AA7A81202479919E0028D100 /* AppDelegate.swift */,
+				AA7A81222479919E0028D100 /* GameScene.sks */,
+				AA7A81282479919E0028D100 /* GameViewController.swift */,
+				AA7A812A2479919E0028D100 /* Main.storyboard */,
+				AA7A8132247991A20028D100 /* Info.plist */,
+				AA7A812F247991A20028D100 /* LaunchScreen.storyboard */,
 			);
 			path = RollOn;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				AA7A81272479919E0028D100 /* GameScene.swift in Sources */,
 				AA7A81292479919E0028D100 /* GameViewController.swift in Sources */,
 				AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */,
+				AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */,
 				AA7A81212479919E0028D100 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

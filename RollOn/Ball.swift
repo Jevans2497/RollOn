@@ -16,7 +16,6 @@ class Ball: SKSpriteNode {
         }
     }
     var endLocation: CGPoint
-    var clicked: Bool
     var arrow: Arrow
     
     init(ballColor: String) {
@@ -25,15 +24,22 @@ class Ball: SKSpriteNode {
         let size = texture.size()
         startLocation = CGPoint(x: 0, y: 0)
         endLocation = CGPoint(x: 0, y: 0)
-        clicked = false
         arrow = Arrow()
 
         super.init(texture: texture, color: color, size: size)
         
-        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
-        physicsBody?.restitution = 0.8
+        setupPhysicsBody()
         name = "\(ballColor)ball"
         arrow.name! += name!
+        zPosition = 50
+    }
+    
+    func setupPhysicsBody() {
+        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
+        physicsBody?.restitution = 0.8
+        physicsBody?.categoryBitMask = BallCategory
+        physicsBody?.contactTestBitMask = GoalCategory
+        physicsBody?.collisionBitMask = BallCategory | WallCategory
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,15 +47,18 @@ class Ball: SKSpriteNode {
     }
     
     func simulate() {
-//        if !clicked {
         let forceVector = createForceVector()
         if forceVector.dx != 0.0 && forceVector.dy != 0.0 {
             physicsBody?.isDynamic = true
             physicsBody?.applyForce(forceVector)
             resetBall()
-            clicked = true
         }
-//        }
+    }
+    
+    func inGoal() {
+        let shrinkAction = SKAction.scale(by: 0.0, duration: 0.2)
+        physicsBody?.isDynamic = false
+        self.run(shrinkAction, completion: self.removeFromParent)
     }
     
     func createForceVector() -> CGVector {
