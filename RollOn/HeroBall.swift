@@ -23,8 +23,8 @@ class HeroBall: Ball {
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
         physicsBody?.restitution = 0.8
         physicsBody?.categoryBitMask = HeroBallCategory
-        physicsBody?.contactTestBitMask = GoalCategory
-        physicsBody?.collisionBitMask = BombBallCategory | WallCategory
+        physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchBlueCategory
+        physicsBody?.collisionBitMask = BombBallCategory | WallCategory | ToggleSwitchRedCategory
     }
     
 }

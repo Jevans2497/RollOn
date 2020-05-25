@@ -1,9 +1,13 @@
 import SpriteKit
 
-let GoalCategory: UInt32 = 0x1 << 2
-let WallCategory: UInt32 = 0x1 << 3
-let HeroBallCategory: UInt32 = 0x1 << 4
-let BombBallCategory: UInt32 = 0x1 << 5
+let HeroBallCategory: UInt32 = 0x1 << 1
+let BombBallCategory: UInt32 = 0x1 << 2
+let GoalCategory: UInt32 = 0x1 << 9
+let WallCategory: UInt32 = 0x1 << 10
+let ToggleSwitchBlueCategory: UInt32 = 0x1 << 11
+let ToggleSwitchRedCategory: UInt32 = 0x1 << 12
+
+enum BallType { case Hero, Bomb }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -62,9 +66,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         goal.position = CGPoint(x: 0.0, y: 0.0)
         addChild(goal)
         
-        let toggleSwitch = ToggleSwitch(color: UIColor.blue)
-        toggleSwitch.position = CGPoint(x: 0.0, y: 150.0)
-        addChild(toggleSwitch)
+        let blueToggleSwitch = ToggleSwitch(acceptedBallType: .Hero)
+        blueToggleSwitch.position = CGPoint(x: 0.0, y: 150.0)
+        addChild(blueToggleSwitch)
+        
+        let redToggleSwitch = ToggleSwitch(acceptedBallType: .Bomb)
+        redToggleSwitch.position = CGPoint(x: 0.0, y: -150.0)
+        addChild(redToggleSwitch)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
