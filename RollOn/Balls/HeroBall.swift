@@ -1,5 +1,5 @@
 //
-//  BombBall.swift
+//  HeroBall.swift
 //  RollOn
 //
 //  Created by Jonathan Evans on 5/25/20.
@@ -9,11 +9,11 @@
 import Foundation
 import SpriteKit
 
-class BombBall: Ball {
+class HeroBall: Ball {
     
     init() {
-        super.init(ballColor: "Red")
-        name = "\(BallType.Bomb)ball"
+        super.init(ballColor: "Blue")
+        name = "\(BallType.Hero)ball"
         arrow.name! += name!
     }
     
@@ -24,9 +24,9 @@ class BombBall: Ball {
     override func setupPhysicsBody() {
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
         physicsBody?.restitution = 0.8
-        physicsBody?.categoryBitMask = BombBallCategory
-        physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchRedCategory
-        physicsBody?.collisionBitMask = HeroBallCategory | WallCategory | ToggleSwitchBlueCategory
+        physicsBody?.categoryBitMask = HeroBallCategory
+        physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchBlueCategory
+        physicsBody?.collisionBitMask = BombBallCategory | WallCategory | ToggleSwitchRedCategory | ToggleWallBlueCategory
     }
     
 }

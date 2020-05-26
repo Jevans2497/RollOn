@@ -11,15 +11,12 @@ import SpriteKit
 
 class CollisionManager {
     
-    var nodeA: SKNode
-    var nodeB: SKNode
+    var toggleSwitchCounter = ToggleSwitchCounter()
+    weak var toggleSwitchCounterDelegate: ToggleSwitchCounterDelegate?
     
-    init(nodeA: SKNode, nodeB: SKNode) {
-        self.nodeA = nodeA
-        self.nodeB = nodeB
-    }
+    init() {}
     
-    func handleCollision() {
+    func handleCollision(nodeA: SKNode, nodeB: SKNode) {
         if let nodeAIsBall = nodeA.name?.contains("ball"), let nodeBIsBall = nodeB.name?.contains("ball") {
             //Because the contact test masks are set not to detect ball to ball collisions, we don't need to check for it
             if nodeAIsBall {
@@ -43,6 +40,24 @@ class CollisionManager {
     }
     
     func toggleSwitchCollision(toggleSwitch: ToggleSwitch) {
-        toggleSwitch.toggle()
+        if !toggleSwitch.hasBeenToggled {
+            toggleSwitch.toggle()
+            toggleSwitchCounter.decrement(ballType: toggleSwitch.acceptedBallType)
+            if toggleSwitchCounter.getValue(for: toggleSwitch.acceptedBallType) <= 0 {
+                toggleCounterHitZero(toggleSwitch: toggleSwitch)
+            }
+        }
     }
+    
+    func toggleCounterHitZero(toggleSwitch: ToggleSwitch) {
+        toggleSwitchCounterDelegate?.toggleCounterHitZero(for: toggleSwitch.acceptedBallType)
+    }
+    
+    func resetToggleCounter() {
+        toggleSwitchCounter.reset()
+    }
+}
+
+protocol ToggleSwitchCounterDelegate: class {
+    func toggleCounterHitZero(for ballType: BallType)
 }

@@ -6,21 +6,24 @@ let GoalCategory: UInt32 = 0x1 << 9
 let WallCategory: UInt32 = 0x1 << 10
 let ToggleSwitchBlueCategory: UInt32 = 0x1 << 11
 let ToggleSwitchRedCategory: UInt32 = 0x1 << 12
+let ToggleWallBlueCategory: UInt32 = 0x1 << 13
+let ToggleWallRedCategory: UInt32 = 0x1 << 14
 
 enum BallType { case Hero, Bomb }
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate {
     
     var balls: Array<Ball> = Array()
     var currentBall: Ball? = nil
     var startAndResetLabel: SKLabelNode!
-    var level = LevelOne()
-    let toggleSwitchCounter = ToggleSwitchCounter()
-    
+    var level = LevelTwo()
+    let collisionManager = CollisionManager()
+
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = .zero
+        collisionManager.toggleSwitchCounterDelegate = self
         setLevelToStart()
     }
     
@@ -29,6 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         balls.removeAll()
         currentBall = nil
         setupStartLabel()
+        collisionManager.resetToggleCounter()
         level.allObjects.removeAll()
         setupLevel1()
     }
@@ -64,7 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupToggleSwitch(toggleSwitch: ToggleSwitch) {
-        toggleSwitchCounter.increment(ballType: toggleSwitch.acceptedBallType)
+        collisionManager.toggleSwitchCounter.increment(ballType: toggleSwitch.acceptedBallType)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -135,9 +139,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         guard let nodeA = contact.bodyA.node else { return }
         guard let nodeB = contact.bodyB.node else { return }
-        
-        let collisionManager = CollisionManager(nodeA: nodeA, nodeB: nodeB)
-        collisionManager.handleCollision()
+        collisionManager.handleCollision(nodeA: nodeA, nodeB: nodeB)
+    }
+    
+    func toggleCounterHitZero(for ballType: BallType) {
+        removeAllToggleSwitchByBallType(ballType: ballType)
+    }
+    
+    func removeAllToggleSwitchByBallType(ballType: BallType) {
+        for child in children {
+            if let isToggleWall = child.name?.contains("toggleWall") {
+                if isToggleWall {
+                    let toggleWall = child as! ToggleWall
+                    if toggleWall.acceptedBallType == ballType {
+                        toggleWall.removeFromParent()
+                    }
+                }
+            }
+        }
     }
     
     private func removeArrow(arrowName: String) {

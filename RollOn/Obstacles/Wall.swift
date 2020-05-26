@@ -15,7 +15,6 @@ class Wall: SKSpriteNode {
         let texture = SKTexture(imageNamed: "brick")
         let color = UIColor.clear
         super.init(texture: texture, color: color, size: size)
-        
         name = "wall"
         setupPhysicsBody()
     }
