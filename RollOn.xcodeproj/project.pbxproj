@@ -24,7 +24,6 @@
 		AA847BEB247C60540037CC16 /* ToggleSwitchCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BEA247C60540037CC16 /* ToggleSwitchCounter.swift */; };
 		AA9FF6E7247C6EB9002F6578 /* ToggleWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF6E6247C6EB9002F6578 /* ToggleWall.swift */; };
 		AA9FF6EE247CB5D4002F6578 /* LevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */; };
-		AA9FF6F0247CBFF1002F6578 /* ToggleWallBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF6EF247CBFF1002F6578 /* ToggleWallBox.swift */; };
 		AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */; };
 		AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */; };
 /* End PBXBuildFile section */
@@ -49,7 +48,6 @@
 		AA847BEA247C60540037CC16 /* ToggleSwitchCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSwitchCounter.swift; sourceTree = "<group>"; };
 		AA9FF6E6247C6EB9002F6578 /* ToggleWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleWall.swift; sourceTree = "<group>"; };
 		AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwo.swift; sourceTree = "<group>"; };
-		AA9FF6EF247CBFF1002F6578 /* ToggleWallBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleWallBox.swift; sourceTree = "<group>"; };
 		AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,7 +146,6 @@
 				AA847BE4247C3D720037CC16 /* CollisionManager.swift */,
 				AA847BE8247C43D60037CC16 /* LevelOne.swift */,
 				AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */,
-				AA9FF6EF247CBFF1002F6578 /* ToggleWallBox.swift */,
 			);
 			name = GameEngine;
 			path = RollOn/GameEngine;
@@ -235,7 +232,6 @@
 				AA7A81292479919E0028D100 /* GameViewController.swift in Sources */,
 				AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */,
 				AA9FF6EE247CB5D4002F6578 /* LevelTwo.swift in Sources */,
-				AA9FF6F0247CBFF1002F6578 /* ToggleWallBox.swift in Sources */,
 				AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */,
 				AA847BDB247C13740037CC16 /* BombBall.swift in Sources */,
 				AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */,

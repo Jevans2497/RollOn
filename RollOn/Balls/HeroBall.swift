@@ -13,6 +13,7 @@ class HeroBall: Ball {
     
     init() {
         super.init(ballColor: "Blue")
+        ballType = .Hero
         name = "\(BallType.Hero)ball"
         arrow.name! += name!
     }

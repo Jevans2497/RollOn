@@ -17,6 +17,9 @@ class Ball: SKSpriteNode {
     }
     var endLocation: CGPoint
     var arrow: Arrow
+    var ballType: BallType
+    var wasShot = false
+    var hasActivatedSecondaryEffect = false
     
     init(ballColor: String) {
         let texture = SKTexture(imageNamed: "ball\(ballColor)")
@@ -25,6 +28,7 @@ class Ball: SKSpriteNode {
         startLocation = CGPoint(x: 0, y: 0)
         endLocation = CGPoint(x: 0, y: 0)
         arrow = Arrow()
+        ballType = .Hero
         super.init(texture: texture, color: color, size: size)
         zPosition = 50
         setupPhysicsBody()
@@ -39,12 +43,19 @@ class Ball: SKSpriteNode {
     }
     
     func simulate() {
-        let forceVector = createForceVector()
-        if forceVector.dx != 0.0 && forceVector.dy != 0.0 {
-            physicsBody?.isDynamic = true
-            physicsBody?.applyForce(forceVector)
-            resetBall()
+        if !wasShot {
+            wasShot = true
+            let forceVector = createForceVector()
+            if forceVector.dx != 0.0 && forceVector.dy != 0.0 {
+                physicsBody?.isDynamic = true
+                physicsBody?.applyForce(forceVector)
+                resetBall()
+            }
         }
+    }
+    
+    func runSecondaryEffect() {
+        //Should always be overriden by balls that have secondary effects
     }
     
     func inGoal() {

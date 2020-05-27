@@ -55,9 +55,6 @@ class LevelTwo {
         let toggleSwitch3 = ToggleSwitch(acceptedBallType: .Hero)
         toggleSwitch3.position = CGPoint(x: 360, y: 265)
         allObjects.append(toggleSwitch3)
-        
-        let toggleWallBox = ToggleWallBox(center: goal.position, ballType: .Hero)
-        allObjects.append(toggleWallBox)
     }
     
     func setupBackground() {

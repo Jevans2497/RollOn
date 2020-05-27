@@ -16,7 +16,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
     var balls: Array<Ball> = Array()
     var currentBall: Ball? = nil
     var startAndResetLabel: SKLabelNode!
-    var level = LevelTwo()
+    var level = LevelOne()
     let collisionManager = CollisionManager()
 
     override func didMove(to view: SKView) {
@@ -34,7 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
         setupStartLabel()
         collisionManager.resetToggleCounter()
         level.allObjects.removeAll()
-        setupLevel1()
+        setupLevel()
     }
     
     func setupStartLabel() {
@@ -45,7 +45,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
         addChild(startAndResetLabel)
     }
     
-    func setupLevel1() {
+    func setupLevel() {
         level.setupLevel()
         for object in level.allObjects {
             let node = object as! SKNode
@@ -97,21 +97,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
     }
     
     func ballTouched(location: CGPoint) {
-        if startAndResetLabel.text == "Reset" { return }
         if let object = nodes(at: location).first as? Ball {
-            let ball = balls.first(where: { $0.name == object.name } )
-            ball?.physicsBody?.isDynamic = false
-            ball?.startLocation = ball?.position as! CGPoint
-            currentBall = ball
+            if let ball = balls.first(where: { $0.name == object.name } ) {
+                ball.startLocation = ball.position
+                ball.runSecondaryEffect()
+                currentBall = ball
+            }
         }
     }
     
     func drawArrow(location: CGPoint) {
         if let cb = currentBall {
-            cb.arrow.touchLocation = location
-            let arrowToDraw = cb.arrow
-            removeArrow(arrowName: arrowToDraw.name!)
-            addChild(arrowToDraw)
+            if !cb.wasShot {
+                cb.arrow.touchLocation = location
+                let arrowToDraw = cb.arrow
+                removeArrow(arrowName: arrowToDraw.name!)
+                addChild(arrowToDraw)
+            }
         }
     }
     
@@ -143,10 +145,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
     }
     
     func toggleCounterHitZero(for ballType: BallType) {
-        removeAllToggleSwitchByBallType(ballType: ballType)
+        removeAllToggleSwitchesByBallType(ballType: ballType)
     }
     
-    func removeAllToggleSwitchByBallType(ballType: BallType) {
+    private func removeAllToggleSwitchesByBallType(ballType: BallType) {
         for child in children {
             if let isToggleWall = child.name?.contains("toggleWall") {
                 if isToggleWall {

@@ -13,6 +13,7 @@ class BombBall: Ball {
     
     init() {
         super.init(ballColor: "Red")
+        ballType = .Bomb
         name = "\(BallType.Bomb)ball"
         arrow.name! += name!
     }
@@ -29,4 +30,48 @@ class BombBall: Ball {
         physicsBody?.collisionBitMask = HeroBallCategory | WallCategory | ToggleSwitchBlueCategory | ToggleWallRedCategory
     }
     
+    override func runSecondaryEffect() {
+        if !hasActivatedSecondaryEffect && wasShot {
+            blowUp()
+            hasActivatedSecondaryEffect = true
+        }
+    }
+    
+    func blowUp() {
+        let nodes = nodesInRadius()
+//        run(shockWaveAction(scaleTo: 1), completion: {
+//            explosionBody.removeFromParent()
+//        })
+    }
+    
+    func nodesInRadius() -> Array<SKNode> {
+        guard let allNodes = parent?.children else { return Array<SKNode>() }
+        var nodesInRadius = Array<SKNode>()
+        for node in allNodes {
+            if let isBall = node.name?.contains("ball") {
+                if isBall {
+                    if ballInRadius(ballPosition: node.position) { nodesInRadius.append(node) }
+                }
+            }
+        }
+        return nodesInRadius
+    }
+    
+    func afterBlowUp() {
+        
+    }
+    
+    private func shockWaveAction(scaleTo: CGFloat) -> SKAction {
+        let shockWaveAction: SKAction = {
+            let growAction = SKAction.group([SKAction.scale(to: scaleTo, duration: 0.1)])
+            let sequence = SKAction.sequence([growAction])
+            return sequence
+        }()
+        return shockWaveAction
+    }
+    
+    private func ballInRadius(ballPosition: CGPoint) -> Bool {
+        let region = SKRegion(radius: 100.0)
+        return region.contains(ballPosition)
+    }
 }

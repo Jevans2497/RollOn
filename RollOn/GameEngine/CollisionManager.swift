@@ -31,7 +31,7 @@ class CollisionManager {
         if otherObject.name == "goal" {
             goalCollision(ball: ball)
         } else if let _ = otherObject.name?.contains("toggleSwitch") {
-            toggleSwitchCollision(toggleSwitch: otherObject as! ToggleSwitch)
+            toggleSwitchCollision(ball: ball, toggleSwitch: otherObject as! ToggleSwitch)
         }
     }
     
@@ -39,12 +39,14 @@ class CollisionManager {
         ball.inGoal()
     }
     
-    func toggleSwitchCollision(toggleSwitch: ToggleSwitch) {
-        if !toggleSwitch.hasBeenToggled {
-            toggleSwitch.toggle()
-            toggleSwitchCounter.decrement(ballType: toggleSwitch.acceptedBallType)
-            if toggleSwitchCounter.getValue(for: toggleSwitch.acceptedBallType) <= 0 {
-                toggleCounterHitZero(toggleSwitch: toggleSwitch)
+    func toggleSwitchCollision(ball: Ball, toggleSwitch: ToggleSwitch) {
+        if ball.ballType == toggleSwitch.acceptedBallType {
+            if !toggleSwitch.hasBeenToggled {
+                toggleSwitch.toggle()
+                toggleSwitchCounter.decrement(ballType: toggleSwitch.acceptedBallType)
+                if toggleSwitchCounter.getValue(for: toggleSwitch.acceptedBallType) <= 0 {
+                    toggleCounterHitZero(toggleSwitch: toggleSwitch)
+                }
             }
         }
     }
