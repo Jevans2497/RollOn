@@ -38,10 +38,18 @@ class BombBall: Ball {
     }
     
     func blowUp() {
-        let nodes = nodesInRadius()
-//        run(shockWaveAction(scaleTo: 1), completion: {
-//            explosionBody.removeFromParent()
-//        })
+        let gravityVector = vector_float3(1,0,1);
+
+        let gravityNode = SKFieldNode.radialGravityField()
+        gravityNode.categoryBitMask = BombBallSecondaryEffectCategory
+        gravityNode.strength = -1
+        gravityNode.region = SKRegion(radius: 100.0)
+        gravityNode.falloff = 4
+
+        addChild(gravityNode)
+        run(shockWaveAction(scaleTo: 1.1), completion: {
+            gravityNode.removeFromParent()
+        })
     }
     
     func nodesInRadius() -> Array<SKNode> {
