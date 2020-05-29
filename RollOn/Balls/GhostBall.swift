@@ -26,7 +26,7 @@ class GhostBall: Ball {
         physicsBody?.restitution = 0.8
         physicsBody?.categoryBitMask = GhostBallCategory
         physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchGrayCategory
-        physicsBody?.collisionBitMask = ToggleSwitchBlueCategory | ToggleSwitchRedCategory
+        physicsBody?.collisionBitMask = ToggleSwitchBlueCategory | ToggleSwitchRedCategory | ToggleWallGrayCategory
         physicsBody?.fieldBitMask = BombBallSecondaryEffectFieldCategory
     }
     

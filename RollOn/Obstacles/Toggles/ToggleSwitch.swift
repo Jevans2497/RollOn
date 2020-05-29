@@ -64,7 +64,7 @@ class ToggleSwitch : SKShapeNode {
         }
     }
     
-    private func getColorBasedOnAcceptedBallType() -> UIColor {
+    func getColorBasedOnAcceptedBallType() -> UIColor {
         switch acceptedBallType {
         case .Hero:
             return UIColor.blue
@@ -85,3 +85,5 @@ extension SKShapeNode {
         addChild(shapeNode)
     }
 }
+
+

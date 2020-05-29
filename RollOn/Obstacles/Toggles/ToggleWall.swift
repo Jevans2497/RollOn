@@ -29,7 +29,7 @@ class ToggleWall: SKShapeNode {
         physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody?.isDynamic = false
         physicsBody?.categoryBitMask =  getCategoryBitMaskByAcceptedBallColor()
-        physicsBody?.collisionBitMask = HeroBallCategory | BombBallCategory
+        physicsBody?.collisionBitMask = HeroBallCategory | BombBallCategory | GhostBallCategory
     }
     
     private func getColorBasedOnAcceptedBallType() -> UIColor {
