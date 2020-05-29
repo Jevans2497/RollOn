@@ -28,6 +28,7 @@ class BombBall: Ball {
         physicsBody?.categoryBitMask = BombBallCategory
         physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchRedCategory
         physicsBody?.collisionBitMask = HeroBallCategory | WallCategory | ToggleSwitchBlueCategory | ToggleWallRedCategory
+        physicsBody?.fieldBitMask = BombBallCategory
     }
     
     override func runSecondaryEffect() {
@@ -38,44 +39,34 @@ class BombBall: Ball {
     }
     
     func blowUp() {
-        let gravityVector = vector_float3(1,0,1);
-
-        let gravityNode = SKFieldNode.radialGravityField()
-        gravityNode.categoryBitMask = BombBallSecondaryEffectCategory
-        gravityNode.strength = -1
-        gravityNode.region = SKRegion(radius: 100.0)
-        gravityNode.falloff = 4
-
-        addChild(gravityNode)
-        run(shockWaveAction(scaleTo: 1.1), completion: {
-            gravityNode.removeFromParent()
+        let gravityField = makeGravityField()
+        addChild(gravityField)
+        run(setToBlackAction())
+        run(pulseAction(scaleTo: 1.5), completion: {
+            gravityField.removeFromParent()
         })
     }
     
-    func nodesInRadius() -> Array<SKNode> {
-        guard let allNodes = parent?.children else { return Array<SKNode>() }
-        var nodesInRadius = Array<SKNode>()
-        for node in allNodes {
-            if let isBall = node.name?.contains("ball") {
-                if isBall {
-                    if ballInRadius(ballPosition: node.position) { nodesInRadius.append(node) }
-                }
-            }
-        }
-        return nodesInRadius
+    private func makeGravityField() -> SKFieldNode {
+        let gravityNode = SKFieldNode.radialGravityField()
+        gravityNode.categoryBitMask = BombBallSecondaryEffectFieldCategory
+        gravityNode.strength = -1
+        gravityNode.region = SKRegion(radius: 80.0)
+        gravityNode.falloff = 3
+        return gravityNode
     }
     
-    func afterBlowUp() {
-        
+    private func pulseAction(scaleTo: CGFloat) -> SKAction {
+        let pulseUp = SKAction.scale(to: scaleTo, duration: 0.1)
+        let pulseDown = SKAction.scale(to: 1.0, duration: 0.1)
+        let pulseAction = SKAction.sequence([pulseUp, pulseDown])
+        return pulseAction
     }
     
-    private func shockWaveAction(scaleTo: CGFloat) -> SKAction {
-        let shockWaveAction: SKAction = {
-            let growAction = SKAction.group([SKAction.scale(to: scaleTo, duration: 0.1)])
-            let sequence = SKAction.sequence([growAction])
-            return sequence
-        }()
-        return shockWaveAction
+    private func setToBlackAction() -> SKAction {
+        color = .black
+        let setToBlack = SKAction.colorize(withColorBlendFactor: 0.7, duration: 0.4)
+        return setToBlack
     }
     
     private func ballInRadius(ballPosition: CGPoint) -> Bool {

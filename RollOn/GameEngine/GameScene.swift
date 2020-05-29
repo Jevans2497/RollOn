@@ -2,7 +2,7 @@ import SpriteKit
 
 let HeroBallCategory: UInt32 = 0x1 << 1
 let BombBallCategory: UInt32 = 0x1 << 2
-let BombBallSecondaryEffectCategory: UInt32 = 0x1 << 3
+let BombBallSecondaryEffectFieldCategory: UInt32 = 0x1 << 3
 let GoalCategory: UInt32 = 0x1 << 9
 let WallCategory: UInt32 = 0x1 << 10
 let ToggleSwitchBlueCategory: UInt32 = 0x1 << 11

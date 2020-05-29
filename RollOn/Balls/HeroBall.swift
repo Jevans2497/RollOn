@@ -27,7 +27,8 @@ class HeroBall: Ball {
         physicsBody?.restitution = 0.8
         physicsBody?.categoryBitMask = HeroBallCategory
         physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchBlueCategory
-        physicsBody?.collisionBitMask = BombBallCategory | WallCategory | ToggleSwitchRedCategory | ToggleWallBlueCategory | BombBallSecondaryEffectCategory
+        physicsBody?.collisionBitMask = BombBallCategory | WallCategory | ToggleSwitchRedCategory | ToggleWallBlueCategory
+        physicsBody?.fieldBitMask = BombBallSecondaryEffectFieldCategory
     }
     
 }
