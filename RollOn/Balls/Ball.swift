@@ -44,6 +44,15 @@ class Ball: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func drawArrow(location: CGPoint) {
+        if !wasShot {
+            let arrowToDraw = arrow
+            arrow.removeFromParent()
+            arrowToDraw.touchLocation = location
+            parent?.addChild(arrowToDraw)
+        }
+    }
+    
     func simulate() {
         if !wasShot {
             wasShot = true
@@ -88,6 +97,7 @@ class Ball: SKSpriteNode {
     func resetBall() {
         startLocation = CGPoint(x: 0.0, y: 0.0)
         endLocation = CGPoint(x: 0.0, y: 0.0)
+        arrow.removeFromParent()
         removeAllChildren()
     }
 }

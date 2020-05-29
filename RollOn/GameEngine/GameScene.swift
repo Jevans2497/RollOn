@@ -15,7 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
     
     var balls: Array<Ball> = Array()
     var currentBall: Ball? = nil
-    var startAndResetLabel: SKLabelNode!
+    var startAndResetLabel = StartAndResetLabel()
     var level = LevelOne()
     let collisionManager = CollisionManager()
 
@@ -31,18 +31,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
         removeAllChildren()
         balls.removeAll()
         currentBall = nil
-        setupStartLabel()
+        startAndResetLabel.text = "Start"
+        addChild(startAndResetLabel)
         collisionManager.resetToggleCounter()
         level.allObjects.removeAll()
         setupLevel()
-    }
-    
-    func setupStartLabel() {
-        startAndResetLabel = SKLabelNode(fontNamed: "Chalkduster")
-        startAndResetLabel.text = "Start"
-        startAndResetLabel.position = CGPoint(x: -400.0, y: 300.0)
-        startAndResetLabel.zPosition = 1000
-        addChild(startAndResetLabel)
     }
     
     func setupLevel() {
@@ -82,18 +75,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
         }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let location = touch.location(in: self)
-            drawArrow(location: location)
-        }
-    }
-        
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let location = touch.location(in: self)
-            ballTouchEnded(location: location)
-        }
+    func startOrResetClicked() {
+        let shouldStart = startAndResetLabel.shouldStart()
+        shouldStart ? startSimulation() : setLevelToStart()
     }
     
     func ballTouched(location: CGPoint) {
@@ -106,14 +90,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
         }
     }
     
-    func drawArrow(location: CGPoint) {
-        if let cb = currentBall {
-            if !cb.wasShot {
-                cb.arrow.touchLocation = location
-                let arrowToDraw = cb.arrow
-                removeArrow(arrowName: arrowToDraw.name!)
-                addChild(arrowToDraw)
-            }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let location = touch.location(in: self)
+            drawArrow(location: location)
+        }
+    }
+    
+    private func drawArrow(location: CGPoint) {
+        if currentBall != nil {
+        let cb = balls.first(where: { $0.name == currentBall?.name } )
+            cb?.drawArrow(location: location)
+        }
+    }
+        
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let location = touch.location(in: self)
+            ballTouchEnded(location: location)
         }
     }
     
@@ -125,14 +119,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
         }
     }
     
-    func startOrResetClicked() {
-        let shouldStart = startAndResetLabel.text == "Start"
-        shouldStart ? startSimulation() : setLevelToStart()
-    }
-    
     func startSimulation() {
         startAndResetLabel.text = "Reset"
-        removeAllPreexistingArrows()
         for ball in balls {
             ball.simulate()
         }
@@ -160,17 +148,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
             }
         }
     }
-    
-    private func removeArrow(arrowName: String) {
-           if let node = childNode(withName: arrowName) {
-               removeChildren(in: [node])
-           }
-       }
-       
-       private func removeAllPreexistingArrows() {
-           for ball in balls {
-               let arrowName = ball.arrow.name!
-               removeArrow(arrowName: arrowName)
-           }
-       }
 }
