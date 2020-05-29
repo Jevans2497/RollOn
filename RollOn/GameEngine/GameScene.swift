@@ -3,14 +3,15 @@ import SpriteKit
 let HeroBallCategory: UInt32 = 0x1 << 1
 let BombBallCategory: UInt32 = 0x1 << 2
 let BombBallSecondaryEffectFieldCategory: UInt32 = 0x1 << 3
+let GhostBallCategory: UInt32 = 0x1 << 4
 let GoalCategory: UInt32 = 0x1 << 9
 let WallCategory: UInt32 = 0x1 << 10
 let ToggleSwitchBlueCategory: UInt32 = 0x1 << 11
 let ToggleSwitchRedCategory: UInt32 = 0x1 << 12
-let ToggleWallBlueCategory: UInt32 = 0x1 << 13
-let ToggleWallRedCategory: UInt32 = 0x1 << 14
-
-enum BallType { case Hero, Bomb }
+let ToggleSwitchGrayCategory: UInt32 = 0x1 << 13
+let ToggleWallBlueCategory: UInt32 = 0x1 << 15
+let ToggleWallRedCategory: UInt32 = 0x1 << 16
+let ToggleWallGrayCategory: UInt32 = 0x1 << 17
 
 class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate {
     

@@ -29,6 +29,14 @@ class LevelOne {
         bombTest.position = CGPoint(x: 80 + leftmost, y: 0.0)
         allObjects.append(bombTest)
         
+        let bombTest2 = BombBall()
+        bombTest2.position = CGPoint(x: 150 + leftmost, y: 0.0)
+        allObjects.append(bombTest2)
+        
+        let ghostTest = GhostBall()
+        ghostTest.position = CGPoint(x: 300 + leftmost, y: 0.0)
+        allObjects.append(ghostTest)
+        
         let goal = Goal()
         goal.position = CGPoint(x: 375.0, y: 0.0)
         allObjects.append(goal)

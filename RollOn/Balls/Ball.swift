@@ -8,12 +8,12 @@
 
 import SpriteKit
 
+enum BallType { case Hero, Bomb, Ghost }
+
 class Ball: SKSpriteNode {
     
     var startLocation: CGPoint {
-        didSet {
-            arrow.ballLocation = startLocation
-        }
+        didSet { arrow.ballLocation = startLocation }
     }
     var endLocation: CGPoint
     var arrow: Arrow
@@ -30,6 +30,8 @@ class Ball: SKSpriteNode {
         arrow = Arrow()
         ballType = .Hero
         super.init(texture: texture, color: color, size: size)
+        name = "ball\(ballColor)\(UUID().uuidString)"
+        arrow.name! += name!
         zPosition = 50
         setupPhysicsBody()
     }

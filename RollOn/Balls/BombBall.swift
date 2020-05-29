@@ -14,8 +14,6 @@ class BombBall: Ball {
     init() {
         super.init(ballColor: "Red")
         ballType = .Bomb
-        name = "\(BallType.Bomb)ball"
-        arrow.name! += name!
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,8 +25,7 @@ class BombBall: Ball {
         physicsBody?.restitution = 0.8
         physicsBody?.categoryBitMask = BombBallCategory
         physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchRedCategory
-        physicsBody?.collisionBitMask = HeroBallCategory | WallCategory | ToggleSwitchBlueCategory | ToggleWallRedCategory
-        physicsBody?.fieldBitMask = BombBallCategory
+        physicsBody?.collisionBitMask = HeroBallCategory | WallCategory | ToggleSwitchBlueCategory | ToggleWallRedCategory | BombBallCategory | ToggleSwitchGrayCategory
     }
     
     override func runSecondaryEffect() {
@@ -39,12 +36,14 @@ class BombBall: Ball {
     }
     
     func blowUp() {
+        physicsBody?.fieldBitMask = BombBallCategory // To avoid having the explosion effect on the calling ball
         let gravityField = makeGravityField()
         addChild(gravityField)
         activateBombParticleEffect()
         run(setToBlackAction())
         run(pulseAction(scaleTo: 1.8), completion: {
             gravityField.removeFromParent()
+            self.physicsBody?.fieldBitMask = .zero
         })
     }
     
@@ -74,10 +73,5 @@ class BombBall: Ball {
         color = .black
         let setToBlack = SKAction.colorize(withColorBlendFactor: 0.7, duration: 0.4)
         return setToBlack
-    }
-    
-    private func ballInRadius(ballPosition: CGPoint) -> Bool {
-        let region = SKRegion(radius: 100.0)
-        return region.contains(ballPosition)
     }
 }

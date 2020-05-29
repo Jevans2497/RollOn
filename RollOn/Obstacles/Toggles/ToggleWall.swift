@@ -38,6 +38,8 @@ class ToggleWall: SKShapeNode {
             return UIColor.blue
         case .Bomb:
             return UIColor.red
+        case .Ghost:
+            return UIColor.gray
         }
     }
     
@@ -47,6 +49,8 @@ class ToggleWall: SKShapeNode {
             return ToggleWallBlueCategory
         case .Bomb:
             return ToggleWallRedCategory
+        case .Ghost:
+            return ToggleWallGrayCategory
         }
     }
 }

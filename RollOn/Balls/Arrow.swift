@@ -40,7 +40,7 @@ class Arrow: SKShapeNode {
         let blY = ballLocation.y
         let tlX = touchLocation.x
         let tlY = touchLocation.y
-        let radians = [5.75959, 0.523599] // The left and right wing angle in radians starting from 0 directly to the right and then going counterclockwise
+        let radians = [5.75959, 0.523599] // The left and right wing angle in radians starting from 0 directly to the right and then going counterclockwise (2pi is a full rotation)
         for radian in radians {
             pathToDraw.move(to: ballLocation)
             let angle = atan2(tlY - blY, tlX - blX) + CGFloat(radian)

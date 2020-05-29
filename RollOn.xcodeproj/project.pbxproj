@@ -28,6 +28,7 @@
 		AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */; };
 		AAF6CAF024809F9D00207E2A /* BombParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = AAF6CAEE24809F9D00207E2A /* BombParticle.sks */; };
 		AAF6CAF124809F9D00207E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF6CAEF24809F9D00207E2A /* Assets.xcassets */; };
+		AAF6CAF52480A35E00207E2A /* GhostBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6CAF42480A35E00207E2A /* GhostBall.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,7 @@
 		AA7A81262479919E0028D100 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		AA7A81282479919E0028D100 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AA7A812B2479919E0028D100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AA7A812D247991A20028D100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA7A812D247991A20028D100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = RollOn/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		AA7A8130247991A20028D100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA7A8132247991A20028D100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RollOn/RarelyUsedFiles/Info.plist; sourceTree = SOURCE_ROOT; };
 		AA7A813824799B220028D100 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		AAF6CAEE24809F9D00207E2A /* BombParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BombParticle.sks; sourceTree = "<group>"; };
 		AAF6CAEF24809F9D00207E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAF6CAF42480A35E00207E2A /* GhostBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostBall.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,7 @@
 				AA9FF6EC247CB281002F6578 /* GameEngine */,
 				AA9FF6E8247CB1FE002F6578 /* Balls */,
 				AA9FF6E9247CB226002F6578 /* Obstacles */,
-				AA7A812D247991A20028D100 /* Assets.xcassets */,
+				AAF6CAF22480A2B700207E2A /* Assets */,
 				AA9FF6EB247CB269002F6578 /* RarelyUsedFiles */,
 			);
 			path = RollOn;
@@ -101,6 +103,7 @@
 				AA7A813824799B220028D100 /* Ball.swift */,
 				AA847BD8247C0CAB0037CC16 /* HeroBall.swift */,
 				AA847BDA247C13740037CC16 /* BombBall.swift */,
+				AAF6CAF42480A35E00207E2A /* GhostBall.swift */,
 				AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */,
 			);
 			name = Balls;
@@ -150,12 +153,29 @@
 				AA847BE4247C3D720037CC16 /* CollisionManager.swift */,
 				AA847BE8247C43D60037CC16 /* LevelOne.swift */,
 				AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */,
-				AAF6CAEE24809F9D00207E2A /* BombParticle.sks */,
-				AAF6CAEF24809F9D00207E2A /* Assets.xcassets */,
 			);
 			name = GameEngine;
 			path = RollOn/GameEngine;
 			sourceTree = SOURCE_ROOT;
+		};
+		AAF6CAF22480A2B700207E2A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AAF6CAF32480A2ED00207E2A /* Particles */,
+				AA7A812D247991A20028D100 /* Assets.xcassets */,
+			);
+			name = Assets;
+			path = RollOn/Assets;
+			sourceTree = SOURCE_ROOT;
+		};
+		AAF6CAF32480A2ED00207E2A /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				AAF6CAEE24809F9D00207E2A /* BombParticle.sks */,
+				AAF6CAEF24809F9D00207E2A /* Assets.xcassets */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -241,6 +261,7 @@
 				AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */,
 				AA9FF6EE247CB5D4002F6578 /* LevelTwo.swift in Sources */,
 				AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */,
+				AAF6CAF52480A35E00207E2A /* GhostBall.swift in Sources */,
 				AA847BDB247C13740037CC16 /* BombBall.swift in Sources */,
 				AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */,
 				AA7A81212479919E0028D100 /* AppDelegate.swift in Sources */,

@@ -1,19 +1,20 @@
 //
-//  HeroBall.swift
+//  GhostBall.swift
 //  RollOn
 //
-//  Created by Jonathan Evans on 5/25/20.
+//  Created by Jonathan Evans on 5/28/20.
 //  Copyright © 2020 Jon Evans. All rights reserved.
 //
 
 import Foundation
 import SpriteKit
 
-class HeroBall: Ball {
+class GhostBall: Ball {
     
     init() {
-        super.init(ballColor: "Blue")
-        ballType = .Hero
+        super.init(ballColor: "Grey")
+        ballType = .Ghost
+        alpha = 0.7
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,9 +24,9 @@ class HeroBall: Ball {
     override func setupPhysicsBody() {
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
         physicsBody?.restitution = 0.8
-        physicsBody?.categoryBitMask = HeroBallCategory
-        physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchBlueCategory
-        physicsBody?.collisionBitMask = BombBallCategory | WallCategory | ToggleSwitchRedCategory | ToggleWallBlueCategory | ToggleSwitchGrayCategory
+        physicsBody?.categoryBitMask = GhostBallCategory
+        physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchGrayCategory
+        physicsBody?.collisionBitMask = ToggleSwitchBlueCategory | ToggleSwitchRedCategory
         physicsBody?.fieldBitMask = BombBallSecondaryEffectFieldCategory
     }
     

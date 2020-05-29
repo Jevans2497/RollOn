@@ -31,7 +31,7 @@ class ToggleSwitch : SKShapeNode {
         physicsBody?.isDynamic = false
         physicsBody?.categoryBitMask =  getCategoryBitMaskByAcceptedBallColor()
         physicsBody?.contactTestBitMask = getContactTestBitMaskByAcceptedBallColor()
-        physicsBody?.collisionBitMask = HeroBallCategory | BombBallCategory
+        physicsBody?.collisionBitMask = HeroBallCategory | BombBallCategory | GhostBallCategory
     }
     
     func getCategoryBitMaskByAcceptedBallColor() -> UInt32 {
@@ -40,6 +40,8 @@ class ToggleSwitch : SKShapeNode {
             return ToggleSwitchBlueCategory
         case .Bomb:
             return ToggleSwitchRedCategory
+        case .Ghost:
+            return ToggleSwitchGrayCategory
         }
     }
     
@@ -49,6 +51,8 @@ class ToggleSwitch : SKShapeNode {
             return HeroBallCategory
         case .Bomb:
             return BombBallCategory
+        case .Ghost:
+            return GhostBallCategory
         }
     }
     
@@ -66,6 +70,8 @@ class ToggleSwitch : SKShapeNode {
             return UIColor.blue
         case .Bomb:
             return UIColor.red
+        case .Ghost:
+            return UIColor.gray
         }
     }
 }
