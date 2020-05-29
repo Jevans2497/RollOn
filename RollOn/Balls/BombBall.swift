@@ -25,7 +25,7 @@ class BombBall: Ball {
         physicsBody?.restitution = 0.8
         physicsBody?.categoryBitMask = BombBallCategory
         physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchRedCategory
-        physicsBody?.collisionBitMask = HeroBallCategory | WallCategory | ToggleSwitchBlueCategory | ToggleWallRedCategory | BombBallCategory | ToggleSwitchGrayCategory
+        physicsBody?.collisionBitMask = HeroBallCategory | WallCategory | ToggleSwitchBlueCategory | ToggleWallCategory | BombBallCategory | ToggleSwitchGrayCategory
     }
     
     override func runSecondaryEffect() {

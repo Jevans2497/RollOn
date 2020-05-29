@@ -9,9 +9,7 @@ let WallCategory: UInt32 = 0x1 << 10
 let ToggleSwitchBlueCategory: UInt32 = 0x1 << 11
 let ToggleSwitchRedCategory: UInt32 = 0x1 << 12
 let ToggleSwitchGrayCategory: UInt32 = 0x1 << 13
-let ToggleWallBlueCategory: UInt32 = 0x1 << 15
-let ToggleWallRedCategory: UInt32 = 0x1 << 16
-let ToggleWallGrayCategory: UInt32 = 0x1 << 17
+let ToggleWallCategory: UInt32 = 0x1 << 15
 
 class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate {
     

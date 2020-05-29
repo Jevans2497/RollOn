@@ -28,7 +28,7 @@ class ToggleWall: SKShapeNode {
     func setupPhysicsBody() {
         physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody?.isDynamic = false
-        physicsBody?.categoryBitMask =  getCategoryBitMaskByAcceptedBallColor()
+        physicsBody?.categoryBitMask =  ToggleWallCategory
         physicsBody?.collisionBitMask = HeroBallCategory | BombBallCategory | GhostBallCategory
     }
     
@@ -40,17 +40,6 @@ class ToggleWall: SKShapeNode {
             return UIColor.red
         case .Ghost:
             return UIColor.gray
-        }
-    }
-    
-    func getCategoryBitMaskByAcceptedBallColor() -> UInt32 {
-        switch acceptedBallType {
-        case .Hero:
-            return ToggleWallBlueCategory
-        case .Bomb:
-            return ToggleWallRedCategory
-        case .Ghost:
-            return ToggleWallGrayCategory
         }
     }
 }
