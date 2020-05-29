@@ -26,6 +26,8 @@
 		AA9FF6EE247CB5D4002F6578 /* LevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */; };
 		AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */; };
 		AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */; };
+		AAF6CAF024809F9D00207E2A /* BombParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = AAF6CAEE24809F9D00207E2A /* BombParticle.sks */; };
+		AAF6CAF124809F9D00207E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF6CAEF24809F9D00207E2A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwo.swift; sourceTree = "<group>"; };
 		AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		AAF6CAEE24809F9D00207E2A /* BombParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BombParticle.sks; sourceTree = "<group>"; };
+		AAF6CAEF24809F9D00207E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 				AA847BE4247C3D720037CC16 /* CollisionManager.swift */,
 				AA847BE8247C43D60037CC16 /* LevelOne.swift */,
 				AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */,
+				AAF6CAEE24809F9D00207E2A /* BombParticle.sks */,
+				AAF6CAEF24809F9D00207E2A /* Assets.xcassets */,
 			);
 			name = GameEngine;
 			path = RollOn/GameEngine;
@@ -212,6 +218,8 @@
 				AA7A812C2479919E0028D100 /* Main.storyboard in Resources */,
 				AA7A81232479919E0028D100 /* GameScene.sks in Resources */,
 				AA7A812E247991A20028D100 /* Assets.xcassets in Resources */,
+				AAF6CAF024809F9D00207E2A /* BombParticle.sks in Resources */,
+				AAF6CAF124809F9D00207E2A /* Assets.xcassets in Resources */,
 				AA7A8131247991A20028D100 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

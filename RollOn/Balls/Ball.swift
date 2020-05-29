@@ -86,6 +86,7 @@ class Ball: SKSpriteNode {
     func resetBall() {
         startLocation = CGPoint(x: 0.0, y: 0.0)
         endLocation = CGPoint(x: 0.0, y: 0.0)
+        removeAllChildren()
     }
 }
 

@@ -41,8 +41,9 @@ class BombBall: Ball {
     func blowUp() {
         let gravityField = makeGravityField()
         addChild(gravityField)
+        activateBombParticleEffect()
         run(setToBlackAction())
-        run(pulseAction(scaleTo: 1.5), completion: {
+        run(pulseAction(scaleTo: 1.8), completion: {
             gravityField.removeFromParent()
         })
     }
@@ -54,6 +55,12 @@ class BombBall: Ball {
         gravityNode.region = SKRegion(radius: 80.0)
         gravityNode.falloff = 3
         return gravityNode
+    }
+    
+    private func activateBombParticleEffect() {
+        if let bombParticles = SKEmitterNode(fileNamed: "BombParticle.sks") {
+            addChild(bombParticles)
+        }
     }
     
     private func pulseAction(scaleTo: CGFloat) -> SKAction {
