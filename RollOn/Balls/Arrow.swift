@@ -26,7 +26,7 @@ class Arrow: SKShapeNode {
     
     func drawArrow() {
         pathToDraw = CGMutablePath()
-        pathToDraw.move(to: ballLocation)
+        pathToDraw.move(to: adjustedTip())
         pathToDraw.addLine(to: touchLocation)
         drawArrowWings()
         path = pathToDraw
@@ -36,18 +36,30 @@ class Arrow: SKShapeNode {
     }
     
     func drawArrowWings() {
+        let radians = [5.75959, 0.523599] // The left and right wing angle in radians starting from 0 directly to the right and then going counterclockwise (2pi is a full rotation)
+        for radian in radians {
+            let angle = ballLocationToTouchLocationInRadians() + CGFloat(radian)
+            let endX = CGFloat(cos(angle) * 65.0) + ballLocation.x
+            let endY = CGFloat(sin(angle) * 65.0) + ballLocation.y
+            pathToDraw.move(to: adjustedTip())
+            pathToDraw.addLine(to: CGPoint(x: endX, y: endY))
+        }
+    }
+    
+    //Without adjustment, the arrow tip is in the center of the ball. This puts it on the edge instead
+    private func adjustedTip() -> CGPoint {
+        let angle = ballLocationToTouchLocationInRadians()
+        let adjustedX = CGFloat(cos(angle) * 23.0) + ballLocation.x
+        let adjustedY = CGFloat(sin(angle) * 23.0) + ballLocation.y
+        return CGPoint(x: adjustedX, y: adjustedY)
+    }
+    
+    private func ballLocationToTouchLocationInRadians() -> CGFloat {
         let blX = ballLocation.x
         let blY = ballLocation.y
         let tlX = touchLocation.x
         let tlY = touchLocation.y
-        let radians = [5.75959, 0.523599] // The left and right wing angle in radians starting from 0 directly to the right and then going counterclockwise (2pi is a full rotation)
-        for radian in radians {
-            pathToDraw.move(to: ballLocation)
-            let angle = atan2(tlY - blY, tlX - blX) + CGFloat(radian)
-            let endX = CGFloat(cos(angle) * 50.0) + blX
-            let endY = CGFloat(sin(angle) * 50.0) + blY
-            pathToDraw.addLine(to: CGPoint(x: endX, y: endY))
-        }
+        return atan2(tlY - blY, tlX - blX)
     }
     
     required init?(coder aDecoder: NSCoder) {
