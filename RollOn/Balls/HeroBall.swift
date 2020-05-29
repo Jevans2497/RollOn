@@ -12,8 +12,7 @@ import SpriteKit
 class HeroBall: Ball {
     
     init() {
-        super.init(ballColor: "Blue")
-        ballType = .Hero
+        super.init(ballType: .Hero)
     }
     
     required init?(coder aDecoder: NSCoder) {

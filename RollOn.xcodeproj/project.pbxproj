@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA5C0B102481C431006BFECE /* LevelThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C0B0F2481C431006BFECE /* LevelThree.swift */; };
 		AA7A81212479919E0028D100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A81202479919E0028D100 /* AppDelegate.swift */; };
 		AA7A81232479919E0028D100 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AA7A81222479919E0028D100 /* GameScene.sks */; };
 		AA7A81272479919E0028D100 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A81262479919E0028D100 /* GameScene.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA5C0B0F2481C431006BFECE /* LevelThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThree.swift; sourceTree = "<group>"; };
 		AA7A811D2479919E0028D100 /* RollOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7A81202479919E0028D100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA7A81222479919E0028D100 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				AA8C3FE52481B2370071093D /* StartAndResetLabel.swift */,
 				AA847BE8247C43D60037CC16 /* LevelOne.swift */,
 				AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */,
+				AA5C0B0F2481C431006BFECE /* LevelThree.swift */,
 			);
 			name = GameEngine;
 			path = RollOn/GameEngine;
@@ -263,6 +266,7 @@
 				AA7A81292479919E0028D100 /* GameViewController.swift in Sources */,
 				AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */,
 				AA9FF6EE247CB5D4002F6578 /* LevelTwo.swift in Sources */,
+				AA5C0B102481C431006BFECE /* LevelThree.swift in Sources */,
 				AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */,
 				AA8C3FE62481B2370071093D /* StartAndResetLabel.swift in Sources */,
 				AAF6CAF52480A35E00207E2A /* GhostBall.swift in Sources */,

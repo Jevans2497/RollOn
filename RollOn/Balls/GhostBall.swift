@@ -12,8 +12,7 @@ import SpriteKit
 class GhostBall: Ball {
     
     init() {
-        super.init(ballColor: "Grey")
-        ballType = .Ghost
+        super.init(ballType: .Ghost)
         alpha = 0.7
     }
     

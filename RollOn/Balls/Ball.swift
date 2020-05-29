@@ -21,16 +21,17 @@ class Ball: SKSpriteNode {
     var wasShot = false
     var hasActivatedSecondaryEffect = false
     
-    init(ballColor: String) {
-        let texture = SKTexture(imageNamed: "ball\(ballColor)")
+    init(ballType: BallType) {
+        var ballTexture = SKTexture(imageNamed: "ballBlue")
         let color = UIColor.clear
-        let size = texture.size()
+        let size = ballTexture.size()
         startLocation = CGPoint(x: 0, y: 0)
         endLocation = CGPoint(x: 0, y: 0)
         arrow = Arrow()
-        ballType = .Hero
-        super.init(texture: texture, color: color, size: size)
-        name = "ball\(ballColor)\(UUID().uuidString)"
+        self.ballType = ballType
+        super.init(texture: ballTexture, color: color, size: size)
+        texture = textureByBallType(ballType: ballType)
+        name = "ball\(ballType)\(UUID().uuidString)"
         arrow.name! += name!
         zPosition = 50
         setupPhysicsBody()
@@ -98,7 +99,22 @@ class Ball: SKSpriteNode {
         startLocation = CGPoint(x: 0.0, y: 0.0)
         endLocation = CGPoint(x: 0.0, y: 0.0)
         arrow.removeFromParent()
+        wasShot = false
+        hasActivatedSecondaryEffect = false
         removeAllChildren()
+    }
+    
+    private func textureByBallType(ballType: BallType) -> SKTexture {
+        var ballColor = ""
+        switch ballType {
+            case .Hero:
+                ballColor = "Blue"
+            case .Bomb:
+                ballColor = "Red"
+            case .Ghost:
+                ballColor = "Grey"
+        }
+        return SKTexture(imageNamed: "ball\(ballColor)")
     }
 }
 

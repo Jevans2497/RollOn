@@ -60,6 +60,7 @@ class ToggleSwitch : SKShapeNode {
         if !hasBeenToggled {
             self.removeAllChildren()
             drawBorder(color: getColorBasedOnAcceptedBallType(), radius: radius)
+            physicsBody?.categoryBitMask = .zero
             hasBeenToggled = true
         }
     }

@@ -12,8 +12,7 @@ import SpriteKit
 class BombBall: Ball {
     
     init() {
-        super.init(ballColor: "Red")
-        ballType = .Bomb
+        super.init(ballType: .Bomb)
     }
     
     required init?(coder aDecoder: NSCoder) {
