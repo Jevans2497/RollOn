@@ -16,7 +16,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
     var balls: Array<Ball> = Array()
     var currentBall: Ball? = nil
     var startAndResetLabel = StartAndResetLabel()
-    var level = LevelThree()
+    var level = LevelFour()
     let collisionManager = CollisionManager()
 
     override func didMove(to view: SKView) {

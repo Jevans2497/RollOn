@@ -9,16 +9,10 @@
 import Foundation
 import SpriteKit
 
-class LevelOne {
+class LevelOne: Level {
     
-    var allObjects = Array<Any>()
-    
-    init() {
-        setupLevel()
-    }
-    
-    func setupLevel() {
-        setupBackground()
+    override func setupLevel() {
+        setupBackground(imageName: "mountain.png")
         let leftmost = (UIScreen.main.bounds.height / 2.0) * -1
         let position = CGPoint(x: 50 + leftmost, y: 0.0)
         let hero = HeroBall()
@@ -77,13 +71,4 @@ class LevelOne {
         wall2.position = CGPoint(x: 0, y: -220)
         allObjects.append(wall2)
     }
-    
-    func setupBackground() {
-        let background = SKSpriteNode(imageNamed: "mountain.png")
-        background.position = CGPoint(x: 0, y: 0)
-        background.blendMode = .replace
-        background.zPosition = -1
-        allObjects.append(background)
-    }
-    
 }

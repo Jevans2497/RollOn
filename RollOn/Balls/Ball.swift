@@ -22,7 +22,7 @@ class Ball: SKSpriteNode {
     var hasActivatedSecondaryEffect = false
     
     init(ballType: BallType) {
-        var ballTexture = SKTexture(imageNamed: "ballBlue")
+        let ballTexture = SKTexture(imageNamed: "ballBlue")
         let color = UIColor.clear
         let size = ballTexture.size()
         startLocation = CGPoint(x: 0, y: 0)
@@ -30,6 +30,7 @@ class Ball: SKSpriteNode {
         arrow = Arrow()
         self.ballType = ballType
         super.init(texture: ballTexture, color: color, size: size)
+        
         texture = textureByBallType(ballType: ballType)
         name = "ball\(ballType)\(UUID().uuidString)"
         arrow.name! += name!
@@ -56,13 +57,13 @@ class Ball: SKSpriteNode {
     
     func simulate() {
         if !wasShot {
-            wasShot = true
             let forceVector = createForceVector()
             if forceVector.dx != 0.0 && forceVector.dy != 0.0 {
                 physicsBody?.isDynamic = true
                 physicsBody?.applyForce(forceVector)
                 resetBall()
             }
+            wasShot = true
         }
     }
     
@@ -99,7 +100,6 @@ class Ball: SKSpriteNode {
         startLocation = CGPoint(x: 0.0, y: 0.0)
         endLocation = CGPoint(x: 0.0, y: 0.0)
         arrow.removeFromParent()
-        wasShot = false
         hasActivatedSecondaryEffect = false
         removeAllChildren()
     }

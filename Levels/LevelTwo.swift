@@ -9,17 +9,10 @@
 import Foundation
 import SpriteKit
 
-class LevelTwo {
+class LevelTwo: Level {
     
-    var allObjects = Array<Any>()
-    
-    init() {
-        setupLevel()
-    }
-    
-    func setupLevel() {
-        setupBackground()
-//        let leftmost = (UIScreen.main.bounds.height / 2.0) * -1
+    override func setupLevel() {
+        setupBackground(imageName: "mountain.png")
         let position = CGPoint(x: 0, y: 0)
         let hero = HeroBall()
         hero.position = position
@@ -56,13 +49,4 @@ class LevelTwo {
         toggleSwitch3.position = CGPoint(x: 360, y: 265)
         allObjects.append(toggleSwitch3)
     }
-    
-    func setupBackground() {
-        let background = SKSpriteNode(imageNamed: "mountain.png")
-        background.position = CGPoint(x: 0, y: 0)
-        background.blendMode = .replace
-        background.zPosition = -1
-        allObjects.append(background)
-    }
-    
 }
