@@ -54,6 +54,30 @@ class LevelFour: Level {
         bomb9.position = CGPoint(x: 100, y: -100)
         allObjects.append(bomb9)
         
+        let bomb10 = BombBall()
+        bomb10.position = CGPoint(x: 100, y: 200)
+        allObjects.append(bomb10)
+        
+        let bomb11 = BombBall()
+        bomb11.position = CGPoint(x: 0, y: 200)
+        allObjects.append(bomb11)
+        
+        let bomb12 = BombBall()
+        bomb12.position = CGPoint(x: -100, y: 200)
+        allObjects.append(bomb12)
+        
+        let bomb13 = BombBall()
+        bomb13.position = CGPoint(x: 100, y: -200)
+        allObjects.append(bomb13)
+        
+        let bomb14 = BombBall()
+        bomb14.position = CGPoint(x: 0, y: -200)
+        allObjects.append(bomb14)
+        
+        let bomb15 = BombBall()
+        bomb15.position = CGPoint(x: -100, y: -200)
+        allObjects.append(bomb15)
+        
         let wall = Wall(size: CGSize(width: 10.0, height: 100.0))
         wall.position = CGPoint(x: -350.0, y: 0.0)
         allObjects.append(wall)
@@ -73,5 +97,45 @@ class LevelFour: Level {
         let redToggleSwitch = ToggleSwitch(acceptedBallType: .Bomb)
         redToggleSwitch.position = CGPoint(x: -300.0, y: 0.0)
         allObjects.append(redToggleSwitch)
+        
+        let blueToggleSwitch1 = ToggleSwitch(acceptedBallType: .Hero)
+        blueToggleSwitch1.position = CGPoint(x: 220, y: -320.0)
+        allObjects.append(blueToggleSwitch1)
+        
+        let blueToggleSwitch2 = ToggleSwitch(acceptedBallType: .Hero)
+        blueToggleSwitch2.position = CGPoint(x: -265, y: -210)
+        allObjects.append(blueToggleSwitch2)
+        
+        let blueToggleSwitch3 = ToggleSwitch(acceptedBallType: .Hero)
+        blueToggleSwitch3.position = CGPoint(x: 230, y: 0)
+        allObjects.append(blueToggleSwitch3)
+        
+        let blueToggleSwitch4 = ToggleSwitch(acceptedBallType: .Hero)
+        blueToggleSwitch4.position = CGPoint(x: -345, y: 271)
+        allObjects.append(blueToggleSwitch4)
+        
+        let blueToggleSwitch5 = ToggleSwitch(acceptedBallType: .Hero)
+        blueToggleSwitch5.position = CGPoint(x: 356, y: 260)
+        allObjects.append(blueToggleSwitch5)
+        
+        let goal = Goal()
+        goal.position = CGPoint(x: 400.0, y: 0.0)
+        allObjects.append(goal)
+        
+        let toggleWall1 = ToggleWall(acceptedBallType: .Hero, size: CGSize(width: 10, height: 100))
+        toggleWall1.position = CGPoint(x: 350, y: 0.0)
+        allObjects.append(toggleWall1)
+        
+        let toggleWall2 = ToggleWall(acceptedBallType: .Hero, size: CGSize(width: 100, height: 10))
+        toggleWall2.position = CGPoint(x: 400, y: 50)
+        allObjects.append(toggleWall2)
+        
+        let toggleWall3 = ToggleWall(acceptedBallType: .Hero, size: CGSize(width: 10, height: 100))
+        toggleWall3.position = CGPoint(x: 450, y: 0.0)
+        allObjects.append(toggleWall3)
+        
+        let toggleWall4 = ToggleWall(acceptedBallType: .Hero, size: CGSize(width: 100, height: 10))
+        toggleWall4.position = CGPoint(x: 400, y: -50)
+        allObjects.append(toggleWall4)
     }
 }

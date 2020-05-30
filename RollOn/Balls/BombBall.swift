@@ -20,8 +20,6 @@ class BombBall: Ball {
     }
     
     override func setupPhysicsBody() {
-        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
-        physicsBody?.restitution = 0.8
         physicsBody?.categoryBitMask = BombBallCategory
         physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchRedCategory
         physicsBody?.collisionBitMask = HeroBallCategory | WallCategory | ToggleSwitchBlueCategory | ToggleWallCategory | BombBallCategory | ToggleSwitchGrayCategory
@@ -35,6 +33,7 @@ class BombBall: Ball {
     }
     
     func blowUp() {
+        let oldFieldBitMask = physicsBody?.fieldBitMask
         physicsBody?.fieldBitMask = BombBallCategory // To avoid having the explosion effect on the calling ball
         let gravityField = makeGravityField()
         addChild(gravityField)
@@ -42,7 +41,7 @@ class BombBall: Ball {
         run(setToBlackAction())
         run(pulseAction(scaleTo: 1.8), completion: {
             gravityField.removeFromParent()
-            self.physicsBody?.fieldBitMask = .zero
+            self.physicsBody?.fieldBitMask = oldFieldBitMask!
         })
     }
     

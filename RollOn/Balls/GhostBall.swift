@@ -21,8 +21,6 @@ class GhostBall: Ball {
     }
     
     override func setupPhysicsBody() {
-        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
-        physicsBody?.restitution = 0.8
         physicsBody?.categoryBitMask = GhostBallCategory
         physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchGrayCategory
         physicsBody?.collisionBitMask = ToggleSwitchBlueCategory | ToggleSwitchRedCategory | ToggleWallCategory

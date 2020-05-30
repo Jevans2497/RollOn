@@ -20,8 +20,6 @@ class HeroBall: Ball {
     }
     
     override func setupPhysicsBody() {
-        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
-        physicsBody?.restitution = 0.8
         physicsBody?.categoryBitMask = HeroBallCategory
         physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchBlueCategory
         physicsBody?.collisionBitMask = BombBallCategory | WallCategory | ToggleSwitchRedCategory | ToggleWallCategory | ToggleSwitchGrayCategory
