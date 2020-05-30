@@ -70,5 +70,7 @@ class LevelOne: Level {
         let wall2 = Wall(size: CGSize(width: 10000, height: 50))
         wall2.position = CGPoint(x: 0, y: -220)
         allObjects.append(wall2)
+        
+        
     }
 }

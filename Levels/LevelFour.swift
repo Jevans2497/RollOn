@@ -118,24 +118,7 @@ class LevelFour: Level {
         blueToggleSwitch5.position = CGPoint(x: 356, y: 260)
         allObjects.append(blueToggleSwitch5)
         
-        let goal = Goal()
-        goal.position = CGPoint(x: 400.0, y: 0.0)
-        allObjects.append(goal)
-        
-        let toggleWall1 = ToggleWall(acceptedBallType: .Hero, size: CGSize(width: 10, height: 100))
-        toggleWall1.position = CGPoint(x: 350, y: 0.0)
-        allObjects.append(toggleWall1)
-        
-        let toggleWall2 = ToggleWall(acceptedBallType: .Hero, size: CGSize(width: 100, height: 10))
-        toggleWall2.position = CGPoint(x: 400, y: 50)
-        allObjects.append(toggleWall2)
-        
-        let toggleWall3 = ToggleWall(acceptedBallType: .Hero, size: CGSize(width: 10, height: 100))
-        toggleWall3.position = CGPoint(x: 450, y: 0.0)
-        allObjects.append(toggleWall3)
-        
-        let toggleWall4 = ToggleWall(acceptedBallType: .Hero, size: CGSize(width: 100, height: 10))
-        toggleWall4.position = CGPoint(x: 400, y: -50)
-        allObjects.append(toggleWall4)
+        let goalInBox = GoalInBox().makeGoalInBox(goalPosition: CGPoint(x: 400.0, y: 0.0), acceptedBallType: .Hero)
+        allObjects.append(contentsOf: goalInBox)
     }
 }

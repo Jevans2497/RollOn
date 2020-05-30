@@ -32,6 +32,8 @@ class CollisionManager {
             goalCollision(ball: ball)
         } else if let _ = otherObject.name?.contains("toggleSwitch") {
             toggleSwitchCollision(ball: ball, toggleSwitch: otherObject as! ToggleSwitch)
+        } else if otherObject.name == "spikes" {
+            spikesCollision(ball: ball)
         }
     }
     
@@ -57,6 +59,10 @@ class CollisionManager {
     
     func resetToggleCounter() {
         toggleSwitchCounter.reset()
+    }
+    
+    func spikesCollision(ball: Ball) {
+        ball.destroy()
     }
 }
 

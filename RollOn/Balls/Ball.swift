@@ -74,6 +74,10 @@ class Ball: SKSpriteNode {
     }
     
     func inGoal() {
+        destroy()
+    }
+    
+    func destroy() {
         let shrinkAction = SKAction.scale(by: 0.0, duration: 0.2)
         physicsBody?.isDynamic = false
         self.run(shrinkAction, completion: self.removeFromParent)

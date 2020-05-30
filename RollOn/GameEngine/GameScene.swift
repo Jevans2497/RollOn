@@ -4,19 +4,20 @@ let HeroBallCategory: UInt32 = 0x1 << 1
 let BombBallCategory: UInt32 = 0x1 << 2
 let BombBallSecondaryEffectFieldCategory: UInt32 = 0x1 << 3
 let GhostBallCategory: UInt32 = 0x1 << 4
-let GoalCategory: UInt32 = 0x1 << 9
-let WallCategory: UInt32 = 0x1 << 10
 let ToggleSwitchBlueCategory: UInt32 = 0x1 << 11
 let ToggleSwitchRedCategory: UInt32 = 0x1 << 12
 let ToggleSwitchGrayCategory: UInt32 = 0x1 << 13
 let ToggleWallCategory: UInt32 = 0x1 << 15
+let GoalCategory: UInt32 = 0x1 << 24
+let WallCategory: UInt32 = 0x1 << 25
+let SpikesCategory: UInt32 = 0x1 << 26
 
 class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate {
     
     var balls: Array<Ball> = Array()
     var currentBall: Ball? = nil
     var startAndResetLabel = StartAndResetLabel()
-    var level = LevelFour()
+    var level = LevelFive()
     let collisionManager = CollisionManager()
 
     override func didMove(to view: SKView) {

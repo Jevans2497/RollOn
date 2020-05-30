@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA018E3A2482D39100FF1BF0 /* LevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA018E392482D39100FF1BF0 /* LevelFive.swift */; };
+		AA018E3C2482D49500FF1BF0 /* GoalInBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA018E3B2482D49500FF1BF0 /* GoalInBox.swift */; };
+		AA018E3E24831AF000FF1BF0 /* Spikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA018E3D24831AF000FF1BF0 /* Spikes.swift */; };
 		AA5C0B102481C431006BFECE /* LevelThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C0B0F2481C431006BFECE /* LevelThree.swift */; };
 		AA5C0B132481D649006BFECE /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C0B122481D649006BFECE /* Level.swift */; };
 		AA5C0B152481D7FB006BFECE /* LevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C0B142481D7FB006BFECE /* LevelFour.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA018E392482D39100FF1BF0 /* LevelFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFive.swift; sourceTree = "<group>"; };
+		AA018E3B2482D49500FF1BF0 /* GoalInBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalInBox.swift; sourceTree = "<group>"; };
+		AA018E3D24831AF000FF1BF0 /* Spikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spikes.swift; sourceTree = "<group>"; };
 		AA5C0B0F2481C431006BFECE /* LevelThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThree.swift; sourceTree = "<group>"; };
 		AA5C0B122481D649006BFECE /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		AA5C0B142481D7FB006BFECE /* LevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFour.swift; sourceTree = "<group>"; };
@@ -85,9 +91,10 @@
 				AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */,
 				AA5C0B0F2481C431006BFECE /* LevelThree.swift */,
 				AA5C0B142481D7FB006BFECE /* LevelFour.swift */,
+				AA018E392482D39100FF1BF0 /* LevelFive.swift */,
 			);
 			path = Levels;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		AA7A81142479919E0028D100 = {
 			isa = PBXGroup;
@@ -135,7 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */,
+				AA018E3B2482D49500FF1BF0 /* GoalInBox.swift */,
 				AA847BE6247C41D10037CC16 /* Wall.swift */,
+				AA018E3D24831AF000FF1BF0 /* Spikes.swift */,
 				AA9FF6EA247CB249002F6578 /* Toggles */,
 			);
 			name = Obstacles;
@@ -275,11 +284,13 @@
 				AA7A81272479919E0028D100 /* GameScene.swift in Sources */,
 				AA5C0B152481D7FB006BFECE /* LevelFour.swift in Sources */,
 				AA847BE5247C3D720037CC16 /* CollisionManager.swift in Sources */,
+				AA018E3E24831AF000FF1BF0 /* Spikes.swift in Sources */,
 				AA847BEB247C60540037CC16 /* ToggleSwitchCounter.swift in Sources */,
 				AA847BE7247C41D10037CC16 /* Wall.swift in Sources */,
 				AA9FF6E7247C6EB9002F6578 /* ToggleWall.swift in Sources */,
 				AA7A81292479919E0028D100 /* GameViewController.swift in Sources */,
 				AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */,
+				AA018E3C2482D49500FF1BF0 /* GoalInBox.swift in Sources */,
 				AA9FF6EE247CB5D4002F6578 /* LevelTwo.swift in Sources */,
 				AA5C0B102481C431006BFECE /* LevelThree.swift in Sources */,
 				AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */,
@@ -290,6 +301,7 @@
 				AA7A81212479919E0028D100 /* AppDelegate.swift in Sources */,
 				AA847BD9247C0CAB0037CC16 /* HeroBall.swift in Sources */,
 				AA5C0B132481D649006BFECE /* Level.swift in Sources */,
+				AA018E3A2482D39100FF1BF0 /* LevelFive.swift in Sources */,
 				AA847BE9247C43D60037CC16 /* LevelOne.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
