@@ -16,7 +16,7 @@ class GhostWall: SKSpriteNode {
         let color = UIColor.clear
         super.init(texture: texture, color: color, size: size)
  
-        alpha = 0.3
+        alpha = 0.5
         name = "ghostWall"
         setupPhysicsBody()
     }
