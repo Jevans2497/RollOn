@@ -103,14 +103,14 @@
 				AA7736A024832533007EAAA2 /* LevelSix.swift */,
 				AA7736A42483523E007EAAA2 /* LevelSeven.swift */,
 			);
-			path = Levels;
+			name = Levels;
+			path = RollOn/Levels;
 			sourceTree = SOURCE_ROOT;
 		};
 		AA7A81142479919E0028D100 = {
 			isa = PBXGroup;
 			children = (
 				AA7A811F2479919E0028D100 /* RollOn */,
-				AA5C0B112481D5EF006BFECE /* Levels */,
 				AA7A811E2479919E0028D100 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,6 +126,7 @@
 		AA7A811F2479919E0028D100 /* RollOn */ = {
 			isa = PBXGroup;
 			children = (
+				AA5C0B112481D5EF006BFECE /* Levels */,
 				AA9FF6EC247CB281002F6578 /* GameEngine */,
 				AA9FF6E8247CB1FE002F6578 /* Balls */,
 				AA9FF6E9247CB226002F6578 /* Obstacles */,

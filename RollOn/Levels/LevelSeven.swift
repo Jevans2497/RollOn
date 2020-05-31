@@ -38,19 +38,19 @@ class LevelSeven: Level {
         allObjects.append(ghostBallBottomRight)
         
         let bombBallTopLeft = BombBall()
-        bombBallTopLeft.position = CGPoint(x: -30, y: 350)
+        bombBallTopLeft.position = CGPoint(x: -100, y: 300)
         allObjects.append(bombBallTopLeft)
         
         let bombBallTopRight = BombBall()
-        bombBallTopRight.position = CGPoint(x: 30, y: 350)
+        bombBallTopRight.position = CGPoint(x: 100, y: 300)
         allObjects.append(bombBallTopRight)
         
         let bombBallBottomLeft = BombBall()
-        bombBallBottomLeft.position = CGPoint(x: -400, y: -250)
+        bombBallBottomLeft.position = CGPoint(x: -300, y: -300)
         allObjects.append(bombBallBottomLeft)
         
         let bombBallBottomRight = BombBall()
-        bombBallBottomRight.position = CGPoint(x: 400, y: -250)
+        bombBallBottomRight.position = CGPoint(x: 300, y: -300)
         allObjects.append(bombBallBottomRight)
         
         
