@@ -14,6 +14,9 @@
 		AA5C0B132481D649006BFECE /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C0B122481D649006BFECE /* Level.swift */; };
 		AA5C0B152481D7FB006BFECE /* LevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C0B142481D7FB006BFECE /* LevelFour.swift */; };
 		AA7736A124832533007EAAA2 /* LevelSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7736A024832533007EAAA2 /* LevelSix.swift */; };
+		AA7736A324834A30007EAAA2 /* Bouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7736A224834A30007EAAA2 /* Bouncer.swift */; };
+		AA7736A52483523E007EAAA2 /* LevelSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7736A42483523E007EAAA2 /* LevelSeven.swift */; };
+		AA7736A7248355DD007EAAA2 /* GhostWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7736A6248355DD007EAAA2 /* GhostWall.swift */; };
 		AA7A81212479919E0028D100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A81202479919E0028D100 /* AppDelegate.swift */; };
 		AA7A81232479919E0028D100 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AA7A81222479919E0028D100 /* GameScene.sks */; };
 		AA7A81272479919E0028D100 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A81262479919E0028D100 /* GameScene.swift */; };
@@ -47,6 +50,9 @@
 		AA5C0B122481D649006BFECE /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		AA5C0B142481D7FB006BFECE /* LevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFour.swift; sourceTree = "<group>"; };
 		AA7736A024832533007EAAA2 /* LevelSix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSix.swift; sourceTree = "<group>"; };
+		AA7736A224834A30007EAAA2 /* Bouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bouncer.swift; sourceTree = "<group>"; };
+		AA7736A42483523E007EAAA2 /* LevelSeven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSeven.swift; sourceTree = "<group>"; };
+		AA7736A6248355DD007EAAA2 /* GhostWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostWall.swift; sourceTree = "<group>"; };
 		AA7A811D2479919E0028D100 /* RollOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7A81202479919E0028D100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA7A81222479919E0028D100 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 				AA5C0B142481D7FB006BFECE /* LevelFour.swift */,
 				AA018E392482D39100FF1BF0 /* LevelFive.swift */,
 				AA7736A024832533007EAAA2 /* LevelSix.swift */,
+				AA7736A42483523E007EAAA2 /* LevelSeven.swift */,
 			);
 			path = Levels;
 			sourceTree = SOURCE_ROOT;
@@ -147,7 +154,9 @@
 				AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */,
 				AA018E3B2482D49500FF1BF0 /* GoalInBox.swift */,
 				AA847BE6247C41D10037CC16 /* Wall.swift */,
+				AA7736A6248355DD007EAAA2 /* GhostWall.swift */,
 				AA018E3D24831AF000FF1BF0 /* Spikes.swift */,
+				AA7736A224834A30007EAAA2 /* Bouncer.swift */,
 				AA9FF6EA247CB249002F6578 /* Toggles */,
 			);
 			name = Obstacles;
@@ -290,12 +299,15 @@
 				AA018E3E24831AF000FF1BF0 /* Spikes.swift in Sources */,
 				AA847BEB247C60540037CC16 /* ToggleSwitchCounter.swift in Sources */,
 				AA847BE7247C41D10037CC16 /* Wall.swift in Sources */,
+				AA7736A324834A30007EAAA2 /* Bouncer.swift in Sources */,
 				AA9FF6E7247C6EB9002F6578 /* ToggleWall.swift in Sources */,
 				AA7A81292479919E0028D100 /* GameViewController.swift in Sources */,
 				AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */,
+				AA7736A7248355DD007EAAA2 /* GhostWall.swift in Sources */,
 				AA018E3C2482D49500FF1BF0 /* GoalInBox.swift in Sources */,
 				AA9FF6EE247CB5D4002F6578 /* LevelTwo.swift in Sources */,
 				AA5C0B102481C431006BFECE /* LevelThree.swift in Sources */,
+				AA7736A52483523E007EAAA2 /* LevelSeven.swift in Sources */,
 				AA7736A124832533007EAAA2 /* LevelSix.swift in Sources */,
 				AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */,
 				AA8C3FE62481B2370071093D /* StartAndResetLabel.swift in Sources */,

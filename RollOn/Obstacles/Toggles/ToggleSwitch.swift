@@ -23,7 +23,7 @@ class ToggleSwitch : SKShapeNode {
         setupPhysicsBody()
         fillColor = getColorBasedOnAcceptedBallType()
         drawBorder(color: UIColor.lightGray, radius: radius)
-        name = "toggleSwitch\(acceptedBallType)"
+        name = "toggleSwitch"
     }
     
     func setupPhysicsBody() {

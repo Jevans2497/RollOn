@@ -71,8 +71,8 @@ class LevelOne: Level {
         wall2.position = CGPoint(x: 0, y: -220)
         allObjects.append(wall2)
         
-        let spikes = Spikes(size: CGSize(width: 50.0, height: 100.0))
-        spikes.position = CGPoint(x: 0.0, y: 0.0)
-        allObjects.append(spikes)
+        let bouncer = Bouncer(size: CGSize(width: 50, height: 50), bounceDirection: .up)
+        bouncer.position = CGPoint(x: 0, y: 0)
+        allObjects.append(bouncer)
     }
 }

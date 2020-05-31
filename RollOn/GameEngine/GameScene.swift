@@ -11,13 +11,15 @@ let ToggleWallCategory: UInt32 = 0x1 << 15
 let GoalCategory: UInt32 = 0x1 << 24
 let WallCategory: UInt32 = 0x1 << 25
 let SpikesCategory: UInt32 = 0x1 << 26
+let BouncerCategory: UInt32 = 0x1 << 27
+let GhostWallCategory: UInt32 = 0x1 << 28
 
 class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate {
     
     var balls: Array<Ball> = Array()
     var currentBall: Ball? = nil
     var startAndResetLabel = StartAndResetLabel()
-    var level = LevelSix()
+    var level = LevelSeven()
     let collisionManager = CollisionManager()
 
     override func didMove(to view: SKView) {

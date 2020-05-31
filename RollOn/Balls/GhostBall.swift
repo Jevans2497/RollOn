@@ -23,7 +23,7 @@ class GhostBall: Ball {
     override func setupPhysicsBody() {
         physicsBody?.categoryBitMask = GhostBallCategory
         physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchGrayCategory
-        physicsBody?.collisionBitMask = ToggleSwitchBlueCategory | ToggleSwitchRedCategory | ToggleWallCategory
+        physicsBody?.collisionBitMask = ToggleSwitchBlueCategory | ToggleSwitchRedCategory | ToggleWallCategory | GhostWallCategory
         physicsBody?.fieldBitMask = BombBallSecondaryEffectFieldCategory
     }
     

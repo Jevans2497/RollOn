@@ -28,12 +28,17 @@ class CollisionManager {
     }
     
     func collisionOccured(ball: Ball, otherObject: SKNode) {
-        if otherObject.name == "goal" {
+        switch otherObject.name {
+        case "goal":
             goalCollision(ball: ball)
-        } else if (otherObject.name?.contains("toggleSwitch"))! {
+        case "toggleSwitch":
             toggleSwitchCollision(ball: ball, toggleSwitch: otherObject as! ToggleSwitch)
-        } else if otherObject.name == "spikes" {
+        case "spikes":
             spikesCollision(ball: ball)
+        case "bouncer":
+            bouncerCollision(bouncer: otherObject as! Bouncer, ball: ball)
+        default:
+            print("Collision occured of unknown type")
         }
     }
     
@@ -63,6 +68,10 @@ class CollisionManager {
     
     func spikesCollision(ball: Ball) {
         ball.destroy()
+    }
+    
+    func bouncerCollision(bouncer: Bouncer, ball: Ball) {
+        bouncer.bounce(ball: ball)
     }
 }
 
