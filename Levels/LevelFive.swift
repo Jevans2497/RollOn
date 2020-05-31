@@ -66,7 +66,7 @@ class LevelFive: Level {
         allObjects.append(bombBallTopMiddle)
         
         let redToggleTopMiddle = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleTopMiddle.position = CGPoint(x: 40.0, y: 300.0)
+        redToggleTopMiddle.position = CGPoint(x: 40.0, y: 240)
         allObjects.append(redToggleTopMiddle)
         
         
@@ -91,7 +91,7 @@ class LevelFive: Level {
         allObjects.append(bombBallBottomMiddle)
         
         let redToggleBottomMiddle = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleBottomMiddle.position = CGPoint(x: -40.0, y: -300.0)
+        redToggleBottomMiddle.position = CGPoint(x: -40.0, y: -260.0)
         allObjects.append(redToggleBottomMiddle)
         
         

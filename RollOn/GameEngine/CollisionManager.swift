@@ -30,7 +30,7 @@ class CollisionManager {
     func collisionOccured(ball: Ball, otherObject: SKNode) {
         if otherObject.name == "goal" {
             goalCollision(ball: ball)
-        } else if let _ = otherObject.name?.contains("toggleSwitch") {
+        } else if (otherObject.name?.contains("toggleSwitch"))! {
             toggleSwitchCollision(ball: ball, toggleSwitch: otherObject as! ToggleSwitch)
         } else if otherObject.name == "spikes" {
             spikesCollision(ball: ball)
