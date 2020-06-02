@@ -60,11 +60,9 @@ class Ball: SKSpriteNode {
     func simulate() {
         if !wasShot {
             let forceVector = createForceVector()
-//            if forceVector.dx != 0.0 && forceVector.dy != 0.0 {
-                physicsBody?.isDynamic = true
-                physicsBody?.applyForce(forceVector)
-                resetBall()
-//            }
+            physicsBody?.isDynamic = true
+            physicsBody?.applyForce(forceVector)
+            resetBall()
             wasShot = true
         }
     }

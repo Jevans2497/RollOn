@@ -119,7 +119,5 @@ class LevelNine: Level {
         let grayToggleSwitch5 = ToggleSwitch(acceptedBallType: .Ghost)
         grayToggleSwitch5.position = CGPoint(x: 225, y: -250)
         allObjects.append(grayToggleSwitch5)
-        
-        
     }
 }
