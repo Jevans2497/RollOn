@@ -19,13 +19,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
     var balls: Array<Ball> = Array()
     var currentBall: Ball? = nil
     var startAndResetLabel = StartAndResetLabel()
-    var level = LevelEight()
+    var level = LevelNine()
     let collisionManager = CollisionManager()
 
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = .zero
+        physicsBody?.friction = 1
         collisionManager.toggleSwitchCounterDelegate = self
         setLevelToStart()
     }

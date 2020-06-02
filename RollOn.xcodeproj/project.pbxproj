@@ -36,6 +36,7 @@
 		AA8C3FE62481B2370071093D /* StartAndResetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C3FE52481B2370071093D /* StartAndResetLabel.swift */; };
 		AA9FF6E7247C6EB9002F6578 /* ToggleWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF6E6247C6EB9002F6578 /* ToggleWall.swift */; };
 		AA9FF6EE247CB5D4002F6578 /* LevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */; };
+		AAD5A2112485F53C0065FEED /* LevelNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD5A2102485F53C0065FEED /* LevelNine.swift */; };
 		AAF2CCA5247AC0B100AF3AD0 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */; };
 		AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */; };
 		AAF6CAF024809F9D00207E2A /* BombParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = AAF6CAEE24809F9D00207E2A /* BombParticle.sks */; };
@@ -75,6 +76,7 @@
 		AA8C3FE52481B2370071093D /* StartAndResetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAndResetLabel.swift; sourceTree = "<group>"; };
 		AA9FF6E6247C6EB9002F6578 /* ToggleWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleWall.swift; sourceTree = "<group>"; };
 		AA9FF6ED247CB5D4002F6578 /* LevelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwo.swift; sourceTree = "<group>"; };
+		AAD5A2102485F53C0065FEED /* LevelNine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelNine.swift; sourceTree = "<group>"; };
 		AAF2CCA4247AC0B100AF3AD0 /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		AAF2CCA6247B6CDE00AF3AD0 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		AAF6CAEE24809F9D00207E2A /* BombParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BombParticle.sks; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				AA7736A024832533007EAAA2 /* LevelSix.swift */,
 				AA7736A42483523E007EAAA2 /* LevelSeven.swift */,
 				AA44246C2484735B00D09271 /* LevelEight.swift */,
+				AAD5A2102485F53C0065FEED /* LevelNine.swift */,
 			);
 			name = Levels;
 			path = RollOn/Levels;
@@ -302,6 +305,7 @@
 				AA847BE5247C3D720037CC16 /* CollisionManager.swift in Sources */,
 				AA018E3E24831AF000FF1BF0 /* Spikes.swift in Sources */,
 				AA847BEB247C60540037CC16 /* ToggleSwitchCounter.swift in Sources */,
+				AAD5A2112485F53C0065FEED /* LevelNine.swift in Sources */,
 				AA847BE7247C41D10037CC16 /* Wall.swift in Sources */,
 				AA7736A324834A30007EAAA2 /* Bouncer.swift in Sources */,
 				AA9FF6E7247C6EB9002F6578 /* ToggleWall.swift in Sources */,
