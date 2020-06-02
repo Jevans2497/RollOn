@@ -12,71 +12,114 @@ import SpriteKit
 class LevelTen: Level {
     
     override func setupLevel() {
-        name = "Level: Passerby"
+        name = "Level 10: Think Again"
         
         setupBackground(imageName: "mountain.jpg")
         
+        let goal = Goal()
+        goal.position = CGPoint(x: 400, y: 0)
+        allObjects.append(goal)
+        
         let hero = HeroBall()
-        hero.position = CGPoint(x: 400, y: 0)
+        hero.position = CGPoint(x: 0, y: 0)
         allObjects.append(hero)
         
-        let bomb = BombBall()
-        bomb.position = CGPoint(x: -400, y: 0)
-        allObjects.append(bomb)
+        let bombBall1 = BombBall()
+        bombBall1.position = CGPoint(x: -400, y: 250)
+        allObjects.append(bombBall1)
+        
+        let bombBall2 = BombBall()
+        bombBall2.position = CGPoint(x: -400, y: 125)
+        allObjects.append(bombBall2)
+        
+        let bombBall3 = BombBall()
+        bombBall3.position = CGPoint(x: -400, y: 0)
+        allObjects.append(bombBall3)
+        
+        let bombBall4 = BombBall()
+        bombBall4.position = CGPoint(x: -400, y: -125)
+        allObjects.append(bombBall4)
+        
+        let bombBall5 = BombBall()
+        bombBall5.position = CGPoint(x: -400, y: -250)
+        allObjects.append(bombBall5)
+        
+        let ghostBall1 = GhostBall()
+        ghostBall1.position = CGPoint(x: 0, y: 250)
+        allObjects.append(ghostBall1)
+        
+        let ghostBall2 = GhostBall()
+        ghostBall2.position = CGPoint(x: 0, y: 125)
+        allObjects.append(ghostBall2)
+        
+        let ghostBall4 = GhostBall()
+        ghostBall4.position = CGPoint(x: 0, y: -125)
+        allObjects.append(ghostBall4)
+        
+        let ghostBall5 = GhostBall()
+        ghostBall5.position = CGPoint(x: 0, y: -250)
+        allObjects.append(ghostBall5)
         
         
         
-        let goalInBox = GoalInBox().makeGoalInBox(goalPosition: CGPoint(x: 300, y: 0), acceptedBallType: .Hero)
-        allObjects.append(contentsOf: goalInBox)
         
         
+        let spikes1 = Spikes(size: CGSize(width: 30, height: 500))
+        spikes1.position = CGPoint(x: -40, y: 200)
+        allObjects.append(spikes1)
         
-        let wallLeft = Wall(size: CGSize(width: 20, height: 100))
-        wallLeft.position = CGPoint(x: -350, y: 0)
-        allObjects.append(wallLeft)
- 
+        let spikes2 = Spikes(size: CGSize(width: 30, height: 500))
+        spikes2.position = CGPoint(x: -40, y: -200)
+        allObjects.append(spikes2)
         
+        let redToggleWall = ToggleWall(acceptedBallType: .Bomb, size: CGSize(width: 10, height: 1000))
+        redToggleWall.position = CGPoint(x: 150, y: 0)
+        allObjects.append(redToggleWall)
+        
+        let grayToggleWall = ToggleWall(acceptedBallType: .Ghost, size: CGSize(width: 10, height: 1000))
+        grayToggleWall.position = CGPoint(x: 300, y: 0)
+        allObjects.append(grayToggleWall)
         
         
         
         let redToggleSwitch1 = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch1.position = CGPoint(x: -50, y: 250)
+        redToggleSwitch1.position = CGPoint(x: -90, y: 250)
         allObjects.append(redToggleSwitch1)
         
         let redToggleSwitch2 = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch2.position = CGPoint(x: -50, y: 125)
+        redToggleSwitch2.position = CGPoint(x: -90, y: 125)
         allObjects.append(redToggleSwitch2)
         
         let redToggleSwitch3 = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch3.position = CGPoint(x: -50, y: 0)
+        redToggleSwitch3.position = CGPoint(x: -90, y: 0)
         allObjects.append(redToggleSwitch3)
         
         let redToggleSwitch4 = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch4.position = CGPoint(x: -50, y: -125)
+        redToggleSwitch4.position = CGPoint(x: -90, y: -125)
         allObjects.append(redToggleSwitch4)
         
         let redToggleSwitch5 = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch5.position = CGPoint(x: -50, y: -250)
+        redToggleSwitch5.position = CGPoint(x: -90, y: -250)
         allObjects.append(redToggleSwitch5)
         
-        let blueToggleSwitch1 = ToggleSwitch(acceptedBallType: .Hero)
-        blueToggleSwitch1.position = CGPoint(x: 50, y: 250)
-        allObjects.append(blueToggleSwitch1)
+        let grayToggleSwitch1 = ToggleSwitch(acceptedBallType: .Ghost)
+        grayToggleSwitch1.position = CGPoint(x: 225, y: 250)
+        allObjects.append(grayToggleSwitch1)
         
-        let blueToggleSwitch2 = ToggleSwitch(acceptedBallType: .Hero)
-        blueToggleSwitch2.position = CGPoint(x: 50, y: 125)
-        allObjects.append(blueToggleSwitch2)
+        let grayToggleSwitch2 = ToggleSwitch(acceptedBallType: .Ghost)
+        grayToggleSwitch2.position = CGPoint(x: 225, y: 125)
+        allObjects.append(grayToggleSwitch2)
         
-        let blueToggleSwitch3 = ToggleSwitch(acceptedBallType: .Hero)
-        blueToggleSwitch3.position = CGPoint(x: 50, y: 0)
-        allObjects.append(blueToggleSwitch3)
+        let grayToggleSwitch3 = ToggleSwitch(acceptedBallType: .Ghost)
+        grayToggleSwitch3.position = CGPoint(x: 225, y: 0)
+        allObjects.append(grayToggleSwitch3)
         
-        let blueToggleSwitch4 = ToggleSwitch(acceptedBallType: .Hero)
-        blueToggleSwitch4.position = CGPoint(x: 50, y: -125)
-        allObjects.append(blueToggleSwitch4)
+        let grayToggleSwitch4 = ToggleSwitch(acceptedBallType: .Ghost)
+        grayToggleSwitch4.position = CGPoint(x: 225, y: -125)
+        allObjects.append(grayToggleSwitch4)
         
-        let blueToggleSwitch5 = ToggleSwitch(acceptedBallType: .Hero)
-        blueToggleSwitch5.position = CGPoint(x: 50, y: -250)
-        allObjects.append(blueToggleSwitch5)
+        let grayToggleSwitch5 = ToggleSwitch(acceptedBallType: .Ghost)
+        grayToggleSwitch5.position = CGPoint(x: 225, y: -250)
+        allObjects.append(grayToggleSwitch5)
     }
 }

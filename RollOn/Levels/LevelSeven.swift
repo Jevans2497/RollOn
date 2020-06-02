@@ -12,7 +12,7 @@ import SpriteKit
 class LevelSeven: Level {
     
     override func setupLevel() {
-        name = "Level: Guardian Angels"
+        name = "Level 7: Guardian Angels"
         
         let leftmost = (UIScreen.main.bounds.height / 2.0) * -1
         let rightmost = (UIScreen.main.bounds.height / 2.0)

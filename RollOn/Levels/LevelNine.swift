@@ -12,114 +12,197 @@ import SpriteKit
 class LevelNine: Level {
     
     override func setupLevel() {
-        name = "Level: Think Again"
+        name = "Level 9: The Ol' Union Jack"
         
         setupBackground(imageName: "mountain.jpg")
         
-        let goal = Goal()
-        goal.position = CGPoint(x: 400, y: 0)
-        allObjects.append(goal)
-        
         let hero = HeroBall()
-        hero.position = CGPoint(x: 0, y: 0)
+        hero.position = CGPoint(x: -350, y: 0.0)
         allObjects.append(hero)
         
-        let bombBall1 = BombBall()
-        bombBall1.position = CGPoint(x: -400, y: 250)
-        allObjects.append(bombBall1)
+        let heroBomb = BombBall()
+        heroBomb.position = CGPoint(x: -450.0, y: 0.0)
+        allObjects.append(heroBomb)
         
-        let bombBall2 = BombBall()
-        bombBall2.position = CGPoint(x: -400, y: 125)
-        allObjects.append(bombBall2)
         
-        let bombBall3 = BombBall()
-        bombBall3.position = CGPoint(x: -400, y: 0)
-        allObjects.append(bombBall3)
         
-        let bombBall4 = BombBall()
-        bombBall4.position = CGPoint(x: -400, y: -125)
-        allObjects.append(bombBall4)
+        let goalInBox = GoalInBox().makeGoalInBox(goalPosition: CGPoint(x: 400.0, y: 0.0), acceptedBallType: .Bomb)
+        allObjects.append(contentsOf: goalInBox)
         
-        let bombBall5 = BombBall()
-        bombBall5.position = CGPoint(x: -400, y: -250)
-        allObjects.append(bombBall5)
         
-        let ghostBall1 = GhostBall()
-        ghostBall1.position = CGPoint(x: 0, y: 250)
-        allObjects.append(ghostBall1)
         
-        let ghostBall2 = GhostBall()
-        ghostBall2.position = CGPoint(x: 0, y: 125)
-        allObjects.append(ghostBall2)
+        let centerWallLeftTop = Wall(size: CGSize(width: 350.0, height: 10.0))
+        centerWallLeftTop.position = CGPoint(x: -400, y: 50)
+        allObjects.append(centerWallLeftTop)
         
-        let ghostBall4 = GhostBall()
-        ghostBall4.position = CGPoint(x: 0, y: -125)
-        allObjects.append(ghostBall4)
+        let centerWallLeftBottom = Wall(size: CGSize(width: 350.0, height: 10.0))
+        centerWallLeftBottom.position = CGPoint(x: -400, y: -50)
+        allObjects.append(centerWallLeftBottom)
         
-        let ghostBall5 = GhostBall()
-        ghostBall5.position = CGPoint(x: 0, y: -250)
-        allObjects.append(ghostBall5)
+        let centerWallRightTop = Wall(size: CGSize(width: 350.0, height: 10.0))
+        centerWallRightTop.position = CGPoint(x: 400, y: 50)
+        allObjects.append(centerWallRightTop)
+        
+        let centerWallRightBottom = Wall(size: CGSize(width: 350.0, height: 10.0))
+        centerWallRightBottom.position = CGPoint(x: 400, y: -50)
+        allObjects.append(centerWallRightBottom)
         
         
         
         
+        //Format for variable names is objectType - top/bottom on screen - left/right/middle on half - left/right/middle in section
+        let wallTopMiddleLeft = Wall(size: CGSize(width: 10.0, height: 255))
+        wallTopMiddleLeft.position = CGPoint(x: -80, y: 290)
+        allObjects.append(wallTopMiddleLeft)
         
-        let spikes1 = Spikes(size: CGSize(width: 30, height: 500))
-        spikes1.position = CGPoint(x: -40, y: 200)
-        allObjects.append(spikes1)
+        let wallTopMiddleMiddle = Wall(size: CGSize(width: 10.0, height: 200))
+        wallTopMiddleMiddle.position = CGPoint(x: 0, y: 290)
+        allObjects.append(wallTopMiddleMiddle)
         
-        let spikes2 = Spikes(size: CGSize(width: 30, height: 500))
-        spikes2.position = CGPoint(x: -40, y: -200)
-        allObjects.append(spikes2)
+        let wallTopMiddleRight = Wall(size: CGSize(width: 10.0, height: 255))
+        wallTopMiddleRight.position = CGPoint(x: 80, y: 290)
+        allObjects.append(wallTopMiddleRight)
         
-        let redToggleWall = ToggleWall(acceptedBallType: .Bomb, size: CGSize(width: 10, height: 1000))
-        redToggleWall.position = CGPoint(x: 150, y: 0)
-        allObjects.append(redToggleWall)
+        let bombBallTopMiddle = BombBall()
+        bombBallTopMiddle.position = CGPoint(x: -40, y: 240.0)
+        allObjects.append(bombBallTopMiddle)
         
-        let grayToggleWall = ToggleWall(acceptedBallType: .Ghost, size: CGSize(width: 10, height: 1000))
-        grayToggleWall.position = CGPoint(x: 300, y: 0)
-        allObjects.append(grayToggleWall)
+        let redToggleTopMiddle = ToggleSwitch(acceptedBallType: .Bomb)
+        redToggleTopMiddle.position = CGPoint(x: 40.0, y: 240)
+        allObjects.append(redToggleTopMiddle)
         
         
         
-        let redToggleSwitch1 = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch1.position = CGPoint(x: -90, y: 250)
-        allObjects.append(redToggleSwitch1)
         
-        let redToggleSwitch2 = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch2.position = CGPoint(x: -90, y: 125)
-        allObjects.append(redToggleSwitch2)
         
-        let redToggleSwitch3 = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch3.position = CGPoint(x: -90, y: 0)
-        allObjects.append(redToggleSwitch3)
         
-        let redToggleSwitch4 = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch4.position = CGPoint(x: -90, y: -125)
-        allObjects.append(redToggleSwitch4)
+        let wallBottomMiddleLeft = Wall(size: CGSize(width: 10.0, height: 255))
+        wallBottomMiddleLeft.position = CGPoint(x: -80, y: -290)
+        allObjects.append(wallBottomMiddleLeft)
         
-        let redToggleSwitch5 = ToggleSwitch(acceptedBallType: .Bomb)
-        redToggleSwitch5.position = CGPoint(x: -90, y: -250)
-        allObjects.append(redToggleSwitch5)
+        let wallBottomMiddleMiddle = Wall(size: CGSize(width: 10.0, height: 200))
+        wallBottomMiddleMiddle.position = CGPoint(x: 0, y: -290)
+        allObjects.append(wallBottomMiddleMiddle)
         
-        let grayToggleSwitch1 = ToggleSwitch(acceptedBallType: .Ghost)
-        grayToggleSwitch1.position = CGPoint(x: 225, y: 250)
-        allObjects.append(grayToggleSwitch1)
+        let wallBottomMiddleRight = Wall(size: CGSize(width: 10.0, height: 255))
+        wallBottomMiddleRight.position = CGPoint(x: 80, y: -290)
+        allObjects.append(wallBottomMiddleRight)
         
-        let grayToggleSwitch2 = ToggleSwitch(acceptedBallType: .Ghost)
-        grayToggleSwitch2.position = CGPoint(x: 225, y: 125)
-        allObjects.append(grayToggleSwitch2)
+        let bombBallBottomMiddle = BombBall()
+        bombBallBottomMiddle.position = CGPoint(x: 40, y: -260.0)
+        allObjects.append(bombBallBottomMiddle)
         
-        let grayToggleSwitch3 = ToggleSwitch(acceptedBallType: .Ghost)
-        grayToggleSwitch3.position = CGPoint(x: 225, y: 0)
-        allObjects.append(grayToggleSwitch3)
+        let redToggleBottomMiddle = ToggleSwitch(acceptedBallType: .Bomb)
+        redToggleBottomMiddle.position = CGPoint(x: -40.0, y: -260.0)
+        allObjects.append(redToggleBottomMiddle)
         
-        let grayToggleSwitch4 = ToggleSwitch(acceptedBallType: .Ghost)
-        grayToggleSwitch4.position = CGPoint(x: 225, y: -125)
-        allObjects.append(grayToggleSwitch4)
         
-        let grayToggleSwitch5 = ToggleSwitch(acceptedBallType: .Ghost)
-        grayToggleSwitch5.position = CGPoint(x: 225, y: -250)
-        allObjects.append(grayToggleSwitch5)
+        
+        
+        
+        let wallTopLeftLeft = Wall(size: CGSize(width: 10.0, height: 500))
+        wallTopLeftLeft.position = CGPoint(x: -460, y: 230)
+        wallTopLeftLeft.zRotation = 0.93
+        allObjects.append(wallTopLeftLeft)
+        
+        let wallTopLeftMiddle = Wall(size: CGSize(width: 10.0, height: 620))
+        wallTopLeftMiddle.position = CGPoint(x: -340, y: 253)
+        wallTopLeftMiddle.zRotation = 0.93
+        allObjects.append(wallTopLeftMiddle)
+        
+        let wallTopLeftRight = Wall(size: CGSize(width: 10.0, height: 460.0))
+        wallTopLeftRight.position = CGPoint(x: -260, y: 295)
+        wallTopLeftRight.zRotation = 0.93
+        allObjects.append(wallTopLeftRight)
+        
+        let bombBallTopLeft = BombBall()
+        bombBallTopLeft.position = CGPoint(x: -400, y: 241)
+        allObjects.append(bombBallTopLeft)
+        
+        let redToggleTopLeft = ToggleSwitch(acceptedBallType: .Bomb)
+        redToggleTopLeft.position = CGPoint(x: -300, y: 270.0)
+        allObjects.append(redToggleTopLeft)
+        
+        
+        
+        
+        let wallTopRightRight = Wall(size: CGSize(width: 10.0, height: 500))
+        wallTopRightRight.position = CGPoint(x: 460, y: 230)
+        wallTopRightRight.zRotation = 5.3529248
+        allObjects.append(wallTopRightRight)
+        
+        let wallTopRightMiddle = Wall(size: CGSize(width: 10.0, height: 620))
+        wallTopRightMiddle.position = CGPoint(x: 340, y: 253)
+        wallTopRightMiddle.zRotation = 5.3529248
+        allObjects.append(wallTopRightMiddle)
+        
+        let wallTopRightLeft = Wall(size: CGSize(width: 10.0, height: 460.0))
+        wallTopRightLeft.position = CGPoint(x: 260, y: 295)
+        wallTopRightLeft.zRotation = 5.3529248
+        allObjects.append(wallTopRightLeft)
+        
+        let bombBallTopRight = BombBall()
+        bombBallTopRight.position = CGPoint(x: 400, y: 241)
+        allObjects.append(bombBallTopRight)
+        
+        let redToggleTopRight = ToggleSwitch(acceptedBallType: .Bomb)
+        redToggleTopRight.position = CGPoint(x: 300, y: 270.0)
+        allObjects.append(redToggleTopRight)
+        
+        
+        
+        
+        
+        let wallBottomRightRight = Wall(size: CGSize(width: 10.0, height: 500))
+        wallBottomRightRight.position = CGPoint(x: 460, y: -230)
+        wallBottomRightRight.zRotation = 0.93
+        allObjects.append(wallBottomRightRight)
+        
+        let wallBottomRightMiddle = Wall(size: CGSize(width: 10.0, height: 620))
+        wallBottomRightMiddle.position = CGPoint(x: 340, y: -253)
+        wallBottomRightMiddle.zRotation = 0.93
+        allObjects.append(wallBottomRightMiddle)
+        
+        let wallBottomRightLeft = Wall(size: CGSize(width: 10.0, height: 460.0))
+        wallBottomRightLeft.position = CGPoint(x: 260, y: -295)
+        wallBottomRightLeft.zRotation = 0.93
+        allObjects.append(wallBottomRightLeft)
+        
+        let bombBallBottomRight = BombBall()
+        bombBallBottomRight.position = CGPoint(x: 400, y: -241)
+        allObjects.append(bombBallBottomRight)
+        
+        let redToggleBottomRight = ToggleSwitch(acceptedBallType: .Bomb)
+        redToggleBottomRight.position = CGPoint(x: 300, y: -270.0)
+        allObjects.append(redToggleBottomRight)
+        
+        
+        
+        
+        
+        let wallBottomLeftLeft = Wall(size: CGSize(width: 10.0, height: 500))
+        wallBottomLeftLeft.position = CGPoint(x: -460, y: -230)
+        wallBottomLeftLeft.zRotation = 5.3529248
+        allObjects.append(wallBottomLeftLeft)
+        
+        let wallBottomLeftMiddle = Wall(size: CGSize(width: 10.0, height: 620))
+        wallBottomLeftMiddle.position = CGPoint(x: -340, y: -253)
+        wallBottomLeftMiddle.zRotation = 5.3529248
+        allObjects.append(wallBottomLeftMiddle)
+        
+        let wallBottomLeftRight = Wall(size: CGSize(width: 10.0, height: 460.0))
+        wallBottomLeftRight.position = CGPoint(x: -260, y: -295)
+        wallBottomLeftRight.zRotation = 5.3529248
+        allObjects.append(wallBottomLeftRight)
+        
+        let bombBallBottomLeft = BombBall()
+        bombBallBottomLeft.position = CGPoint(x: -400, y: -241)
+        allObjects.append(bombBallBottomLeft)
+        
+        let redToggleBottomLeft = ToggleSwitch(acceptedBallType: .Bomb)
+        redToggleBottomLeft.position = CGPoint(x: -300, y: -270.0)
+        allObjects.append(redToggleBottomLeft)
+        
+        
     }
 }
