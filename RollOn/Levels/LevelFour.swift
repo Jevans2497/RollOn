@@ -12,6 +12,8 @@ import SpriteKit
 class LevelFour: Level {
     
     override func setupLevel() {
+        name = "Level: All You Can Do Is Your Best"
+        
         setupBackground(imageName: "mountain.jpg")
         
         let hero = HeroBall()

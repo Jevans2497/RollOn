@@ -12,6 +12,7 @@ import SpriteKit
 class Level {
     
     var allObjects = Array<Any>()
+    var name = "Level"
     
     init() {
         setupLevel()

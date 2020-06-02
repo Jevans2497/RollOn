@@ -32,7 +32,7 @@ class Ball: SKSpriteNode {
         super.init(texture: ballTexture, color: color, size: size)
         
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2.0)
-        physicsBody?.restitution = 1
+        physicsBody?.restitution = 0.8
         texture = textureByBallType(ballType: ballType)
         name = "ball\(ballType)\(UUID().uuidString)"
         arrow.name! += name!

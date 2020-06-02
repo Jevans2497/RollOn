@@ -12,6 +12,8 @@ import SpriteKit
 class LevelNine: Level {
     
     override func setupLevel() {
+        name = "Level: Think Again"
+        
         setupBackground(imageName: "mountain.jpg")
         
         let goal = Goal()

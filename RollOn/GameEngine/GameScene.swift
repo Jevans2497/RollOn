@@ -14,29 +14,34 @@ let SpikesCategory: UInt32 = 0x1 << 26
 let BouncerCategory: UInt32 = 0x1 << 27
 let GhostWallCategory: UInt32 = 0x1 << 28
 
-class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate, GoalReachedDelegate {
     
     var balls: Array<Ball> = Array()
     var currentBall: Ball? = nil
-    var startAndResetLabel = StartAndResetLabel()
-    var level = LevelTen()
+    let startAndResetLabel = StartAndResetLabel()
+    let nextLevelLabel = NextLevelLabel()
+    let levelManager = LevelManager()
+    var level = Level()
     let collisionManager = CollisionManager()
 
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = .zero
-        physicsBody?.friction = 1
         collisionManager.toggleSwitchCounterDelegate = self
+        collisionManager.goalReachedDelegate = self
         setLevelToStart()
     }
     
     func setLevelToStart() {
+        level = levelManager.getCurrentLevel()
         removeAllChildren()
         balls.removeAll()
         currentBall = nil
         startAndResetLabel.text = "Start"
         addChild(startAndResetLabel)
+        nextLevelLabel.isHidden = true
+        addChild(nextLevelLabel)
         collisionManager.resetToggleCounter()
         level.allObjects.removeAll()
         setupLevel()
@@ -73,6 +78,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
             let location = touch.location(in: self)
             if nodes(at: location).contains(startAndResetLabel) {
                 startOrResetClicked()
+            } else if nodes(at: location).contains(nextLevelLabel) {
+                nextLevelClicked()
             } else {
                 ballTouched(location: location)
             }
@@ -82,6 +89,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
     func startOrResetClicked() {
         let shouldStart = startAndResetLabel.shouldStart()
         shouldStart ? startSimulation() : setLevelToStart()
+    }
+    
+    func nextLevelClicked() {
+        level = levelManager.nextLevel()
+        setLevelToStart()
     }
     
     func ballTouched(location: CGPoint) {
@@ -138,6 +150,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate 
     
     func toggleCounterHitZero(for ballType: BallType) {
         removeAllToggleSwitchesByBallType(ballType: ballType)
+    }
+    
+    func goalReached() {
+        nextLevelLabel.isHidden = false
     }
     
     private func removeAllToggleSwitchesByBallType(ballType: BallType) {

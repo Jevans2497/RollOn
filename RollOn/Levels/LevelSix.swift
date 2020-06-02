@@ -12,6 +12,8 @@ import SpriteKit
 class LevelSix: Level {
     
     override func setupLevel() {
+        name = "Level: Spikes and Pikes"
+        
         setupBackground(imageName: "mountain.jpg")
         
         let hero = HeroBall()

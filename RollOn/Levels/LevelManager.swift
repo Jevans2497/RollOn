@@ -31,8 +31,12 @@ class LevelManager {
         levels.append(LevelTen())
     }
     
+    func getCurrentLevel() -> Level {
+        return levels[currentLevel]
+    }
+    
     func nextLevel() -> Level {
         currentLevel += 1
-        return levels[currentLevel]
+        return currentLevel < levels.count ? levels[currentLevel] : levels[levels.count - 1]
     }
 }

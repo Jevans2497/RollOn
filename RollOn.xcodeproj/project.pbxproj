@@ -12,6 +12,7 @@
 		AA018E3E24831AF000FF1BF0 /* Spikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA018E3D24831AF000FF1BF0 /* Spikes.swift */; };
 		AA251F9E2486F24200E385F7 /* LevelTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA251F9D2486F24200E385F7 /* LevelTen.swift */; };
 		AA251FA02486F66700E385F7 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA251F9F2486F66700E385F7 /* LevelManager.swift */; };
+		AA251FA22486F88900E385F7 /* NextLevelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA251FA12486F88900E385F7 /* NextLevelLabel.swift */; };
 		AA44246D2484735B00D09271 /* LevelEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44246C2484735B00D09271 /* LevelEight.swift */; };
 		AA5C0B102481C431006BFECE /* LevelThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C0B0F2481C431006BFECE /* LevelThree.swift */; };
 		AA5C0B132481D649006BFECE /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C0B122481D649006BFECE /* Level.swift */; };
@@ -52,6 +53,7 @@
 		AA018E3D24831AF000FF1BF0 /* Spikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spikes.swift; sourceTree = "<group>"; };
 		AA251F9D2486F24200E385F7 /* LevelTen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTen.swift; sourceTree = "<group>"; };
 		AA251F9F2486F66700E385F7 /* LevelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
+		AA251FA12486F88900E385F7 /* NextLevelLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLevelLabel.swift; sourceTree = "<group>"; };
 		AA44246C2484735B00D09271 /* LevelEight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelEight.swift; sourceTree = "<group>"; };
 		AA5C0B0F2481C431006BFECE /* LevelThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThree.swift; sourceTree = "<group>"; };
 		AA5C0B122481D649006BFECE /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				AA7A81262479919E0028D100 /* GameScene.swift */,
 				AA847BE4247C3D720037CC16 /* CollisionManager.swift */,
 				AA8C3FE52481B2370071093D /* StartAndResetLabel.swift */,
+				AA251FA12486F88900E385F7 /* NextLevelLabel.swift */,
 			);
 			name = GameEngine;
 			path = RollOn/GameEngine;
@@ -311,6 +314,7 @@
 				AA847BE5247C3D720037CC16 /* CollisionManager.swift in Sources */,
 				AA018E3E24831AF000FF1BF0 /* Spikes.swift in Sources */,
 				AA847BEB247C60540037CC16 /* ToggleSwitchCounter.swift in Sources */,
+				AA251FA22486F88900E385F7 /* NextLevelLabel.swift in Sources */,
 				AA251FA02486F66700E385F7 /* LevelManager.swift in Sources */,
 				AAD5A2112485F53C0065FEED /* LevelNine.swift in Sources */,
 				AA847BE7247C41D10037CC16 /* Wall.swift in Sources */,

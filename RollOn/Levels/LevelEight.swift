@@ -12,6 +12,8 @@ import SpriteKit
 class LevelEight: Level {
     
     override func setupLevel() {
+        name = "Level: Time Bomb"
+        
         setupBackground(imageName: "mountain.jpg")
         
         let hero = HeroBall()

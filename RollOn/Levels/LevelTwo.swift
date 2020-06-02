@@ -12,6 +12,8 @@ import SpriteKit
 class LevelTwo: Level {
     
     override func setupLevel() {
+        name = "Level 2: Ricochet"
+        
         setupBackground(imageName: "mountain.png")
         let position = CGPoint(x: 0, y: 0)
         let hero = HeroBall()

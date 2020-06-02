@@ -13,6 +13,7 @@ class CollisionManager {
     
     var toggleSwitchCounter = ToggleSwitchCounter()
     weak var toggleSwitchCounterDelegate: ToggleSwitchCounterDelegate?
+    weak var goalReachedDelegate: GoalReachedDelegate?
     
     init() {}
     
@@ -44,6 +45,7 @@ class CollisionManager {
     
     func goalCollision(ball: Ball) {
         ball.inGoal()
+        goalReachedDelegate?.goalReached()
     }
     
     func toggleSwitchCollision(ball: Ball, toggleSwitch: ToggleSwitch) {
@@ -77,4 +79,8 @@ class CollisionManager {
 
 protocol ToggleSwitchCounterDelegate: class {
     func toggleCounterHitZero(for ballType: BallType)
+}
+
+protocol GoalReachedDelegate: class {
+    func goalReached()
 }

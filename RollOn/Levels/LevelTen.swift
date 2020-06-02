@@ -12,6 +12,8 @@ import SpriteKit
 class LevelTen: Level {
     
     override func setupLevel() {
+        name = "Level: Passerby"
+        
         setupBackground(imageName: "mountain.jpg")
         
         let hero = HeroBall()

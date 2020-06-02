@@ -12,6 +12,8 @@ import SpriteKit
 class LevelThree: Level {
     
     override func setupLevel() {
+        name = "Level: Going Ghost"
+        
         setupBackground(imageName: "mountain.png")
         let leftmost = (UIScreen.main.bounds.height / 2.0) * -1
         let hero = HeroBall()
