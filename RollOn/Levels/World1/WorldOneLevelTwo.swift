@@ -14,7 +14,7 @@ class WorldOneLevelTwo: Level {
     override func setupLevel() {
         name = "Level 1-2:\nIt's Rewind Time"
         
-        setupBackground(imageName: "mountain.jpg")
+        setupBackground()
         
         let hero = HeroBall()
         hero.position = CGPoint(x: -300, y: 0)
@@ -29,7 +29,7 @@ class WorldOneLevelTwo: Level {
         allObjects.append(wall)
         
         let resetTutorial = TutorialLabel().makeLabel(tutorialString: "Missed the goal?\nJust click reset")
-        resetTutorial.position = CGPoint(x: 0, y: 250)
+        resetTutorial.position = CGPoint(x: 0, y: 200)
         resetTutorial.numberOfLines = 2
         allObjects.append(resetTutorial)
     }

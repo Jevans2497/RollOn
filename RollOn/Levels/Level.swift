@@ -23,7 +23,7 @@ class Level {
         //Should always be overriden
     }
     
-    func setupBackground(imageName: String) {
+    func setupBackground(imageName: String = "mountain.jpg") {
         let background = SKSpriteNode(imageNamed: imageName)
         background.position = CGPoint(x: 0, y: 0)
         background.blendMode = .replace
@@ -34,10 +34,19 @@ class Level {
     func displayName() {
         let nameBackground = makeNameBackground()
         let nameLabel = makeNameLabel()
-        
         nameBackground.addChild(nameLabel)
         allObjects.append(nameBackground)
-        hasSeenName = true
+        nameBackground.run(fadeAwayAction(), completion: {
+            self.hasSeenName = true
+            nameBackground.removeFromParent()
+        })
+    }
+    
+    func fadeAwayAction() -> SKAction {
+        let wait = SKAction.wait(forDuration: 1.5)
+        let fade = SKAction.fadeOut(withDuration: 0.5)
+        let sequence = SKAction.sequence([wait, fade])
+        return sequence
     }
     
     private func makeNameBackground() -> SKShapeNode {
@@ -50,6 +59,16 @@ class Level {
     }
     
     private func makeNameLabel() -> SKLabelNode {
-        return SKLabelNode(text: name)
+        let attrString = NSMutableAttributedString(string: name)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        let range = NSRange(location: 0, length: name.count)
+        attrString.addAttribute(.paragraphStyle, value: paragraphStyle, range: range)
+        attrString.addAttributes([.foregroundColor : UIColor.white, NSAttributedString.Key.font :
+            UIFont(name: "Futura-Medium", size: 40)!], range: range)
+        let nameLabel = SKLabelNode(attributedText: attrString)
+        nameLabel.numberOfLines = 2
+        nameLabel.position = CGPoint(x: 0, y: -50)
+        return nameLabel
     }
 }

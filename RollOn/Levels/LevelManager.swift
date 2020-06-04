@@ -19,8 +19,15 @@ class LevelManager {
     }
     
     func makeLevels() {
-        levels.append(WorldOneLevelTwo())
+        makeWorldOne()
 //        makeOriginalLevels()
+    }
+    
+    func makeWorldOne() {
+//        levels.append(WorldOneLevelOne())
+//        levels.append(WorldOneLevelTwo())
+//        levels.append(WorldOneLevelThree())
+        levels.append(WorldOneLevelFour())
     }
     
     func makeOriginalLevels() {

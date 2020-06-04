@@ -13,9 +13,8 @@ class WorldOneLevelOne: Level {
     
     override func setupLevel() {
         name = "Level 1-1:\nBaby Steps"
-//        displayName()
         
-        setupBackground(imageName: "mountain.jpg")
+        setupBackground()
         
         let hero = HeroBall()
         hero.position = CGPoint(x: -300, y: 0)
