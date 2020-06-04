@@ -120,5 +120,11 @@ class Ball: SKSpriteNode {
         }
         return SKTexture(imageNamed: "ball\(ballColor)")
     }
+    
+    func ghostBallCollision() {
+        if let smokeParticles = SKEmitterNode(fileNamed: "SmokeParticle.sks") {
+            addChild(smokeParticles)
+        }
+    }
 }
 

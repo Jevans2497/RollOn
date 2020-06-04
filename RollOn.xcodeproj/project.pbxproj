@@ -10,9 +10,9 @@
 		AA018E3A2482D39100FF1BF0 /* LevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA018E392482D39100FF1BF0 /* LevelFive.swift */; };
 		AA018E3C2482D49500FF1BF0 /* GoalInBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA018E3B2482D49500FF1BF0 /* GoalInBox.swift */; };
 		AA018E3E24831AF000FF1BF0 /* Spikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA018E3D24831AF000FF1BF0 /* Spikes.swift */; };
-		AA2362AE2489760C007C40B3 /* WorldOneLevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2362AD2489760C007C40B3 /* WorldOneLevelOne.swift */; };
+		AA2362AE2489760C007C40B3 /* Level1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2362AD2489760C007C40B3 /* Level1_1.swift */; };
 		AA2362B0248979FB007C40B3 /* TutorialLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2362AF248979FB007C40B3 /* TutorialLabel.swift */; };
-		AA2362B2248981B8007C40B3 /* WorldOneLevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2362B1248981B8007C40B3 /* WorldOneLevelTwo.swift */; };
+		AA2362B2248981B8007C40B3 /* Level1_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2362B1248981B8007C40B3 /* Level1_2.swift */; };
 		AA251F9E2486F24200E385F7 /* LevelTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA251F9D2486F24200E385F7 /* LevelTen.swift */; };
 		AA251FA02486F66700E385F7 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA251F9F2486F66700E385F7 /* LevelManager.swift */; };
 		AA251FA22486F88900E385F7 /* NextLevelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA251FA12486F88900E385F7 /* NextLevelLabel.swift */; };
@@ -32,8 +32,9 @@
 		AA7A812E247991A20028D100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7A812D247991A20028D100 /* Assets.xcassets */; };
 		AA7A8131247991A20028D100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7A812F247991A20028D100 /* LaunchScreen.storyboard */; };
 		AA7A813924799B220028D100 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A813824799B220028D100 /* Ball.swift */; };
-		AA84150B2489A79300707B7F /* WorldOneLevelThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84150A2489A79300707B7F /* WorldOneLevelThree.swift */; };
-		AA84150D2489A97300707B7F /* WorldOneLevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84150C2489A97200707B7F /* WorldOneLevelFour.swift */; };
+		AA84150B2489A79300707B7F /* Level_1_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84150A2489A79300707B7F /* Level_1_3.swift */; };
+		AA84150D2489A97300707B7F /* Level1_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84150C2489A97200707B7F /* Level1_4.swift */; };
+		AA84150F2489BAC600707B7F /* SmokeParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = AA84150E2489BAC500707B7F /* SmokeParticle.sks */; };
 		AA847BD9247C0CAB0037CC16 /* HeroBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BD8247C0CAB0037CC16 /* HeroBall.swift */; };
 		AA847BDB247C13740037CC16 /* BombBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BDA247C13740037CC16 /* BombBall.swift */; };
 		AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA847BE2247C259B0037CC16 /* ToggleSwitch.swift */; };
@@ -56,9 +57,9 @@
 		AA018E392482D39100FF1BF0 /* LevelFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LevelFive.swift; path = "RollOn/Levels/Original Levels/LevelFive.swift"; sourceTree = SOURCE_ROOT; };
 		AA018E3B2482D49500FF1BF0 /* GoalInBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalInBox.swift; sourceTree = "<group>"; };
 		AA018E3D24831AF000FF1BF0 /* Spikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spikes.swift; sourceTree = "<group>"; };
-		AA2362AD2489760C007C40B3 /* WorldOneLevelOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOneLevelOne.swift; sourceTree = "<group>"; };
+		AA2362AD2489760C007C40B3 /* Level1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1_1.swift; sourceTree = "<group>"; };
 		AA2362AF248979FB007C40B3 /* TutorialLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialLabel.swift; sourceTree = "<group>"; };
-		AA2362B1248981B8007C40B3 /* WorldOneLevelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOneLevelTwo.swift; sourceTree = "<group>"; };
+		AA2362B1248981B8007C40B3 /* Level1_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1_2.swift; sourceTree = "<group>"; };
 		AA251F9D2486F24200E385F7 /* LevelTen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LevelTen.swift; path = "RollOn/Levels/Original Levels/LevelTen.swift"; sourceTree = SOURCE_ROOT; };
 		AA251F9F2486F66700E385F7 /* LevelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LevelManager.swift; path = RollOn/Levels/LevelManager.swift; sourceTree = SOURCE_ROOT; };
 		AA251FA12486F88900E385F7 /* NextLevelLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLevelLabel.swift; sourceTree = "<group>"; };
@@ -80,8 +81,9 @@
 		AA7A8130247991A20028D100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA7A8132247991A20028D100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RollOn/RarelyUsedFiles/Info.plist; sourceTree = SOURCE_ROOT; };
 		AA7A813824799B220028D100 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
-		AA84150A2489A79300707B7F /* WorldOneLevelThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOneLevelThree.swift; sourceTree = "<group>"; };
-		AA84150C2489A97200707B7F /* WorldOneLevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOneLevelFour.swift; sourceTree = "<group>"; };
+		AA84150A2489A79300707B7F /* Level_1_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_1_3.swift; sourceTree = "<group>"; };
+		AA84150C2489A97200707B7F /* Level1_4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1_4.swift; sourceTree = "<group>"; };
+		AA84150E2489BAC500707B7F /* SmokeParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeParticle.sks; sourceTree = "<group>"; };
 		AA847BD8247C0CAB0037CC16 /* HeroBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroBall.swift; sourceTree = "<group>"; };
 		AA847BDA247C13740037CC16 /* BombBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BombBall.swift; sourceTree = "<group>"; };
 		AA847BE2247C259B0037CC16 /* ToggleSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSwitch.swift; sourceTree = "<group>"; };
@@ -132,10 +134,10 @@
 		AA2362AC248975EF007C40B3 /* World1 */ = {
 			isa = PBXGroup;
 			children = (
-				AA2362AD2489760C007C40B3 /* WorldOneLevelOne.swift */,
-				AA2362B1248981B8007C40B3 /* WorldOneLevelTwo.swift */,
-				AA84150A2489A79300707B7F /* WorldOneLevelThree.swift */,
-				AA84150C2489A97200707B7F /* WorldOneLevelFour.swift */,
+				AA2362AD2489760C007C40B3 /* Level1_1.swift */,
+				AA2362B1248981B8007C40B3 /* Level1_2.swift */,
+				AA84150A2489A79300707B7F /* Level_1_3.swift */,
+				AA84150C2489A97200707B7F /* Level1_4.swift */,
 			);
 			name = World1;
 			path = RollOn/Levels/World1;
@@ -263,6 +265,7 @@
 			children = (
 				AAF6CAEE24809F9D00207E2A /* BombParticle.sks */,
 				AAF6CAEF24809F9D00207E2A /* Assets.xcassets */,
+				AA84150E2489BAC500707B7F /* SmokeParticle.sks */,
 			);
 			path = Particles;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				AA7A812C2479919E0028D100 /* Main.storyboard in Resources */,
 				AA7A81232479919E0028D100 /* GameScene.sks in Resources */,
 				AA7A812E247991A20028D100 /* Assets.xcassets in Resources */,
+				AA84150F2489BAC600707B7F /* SmokeParticle.sks in Resources */,
 				AAF6CAF024809F9D00207E2A /* BombParticle.sks in Resources */,
 				AAF6CAF124809F9D00207E2A /* Assets.xcassets in Resources */,
 				AA7A8131247991A20028D100 /* LaunchScreen.storyboard in Resources */,
@@ -347,7 +351,7 @@
 				AA847BE5247C3D720037CC16 /* CollisionManager.swift in Sources */,
 				AA018E3E24831AF000FF1BF0 /* Spikes.swift in Sources */,
 				AA847BEB247C60540037CC16 /* ToggleSwitchCounter.swift in Sources */,
-				AA2362AE2489760C007C40B3 /* WorldOneLevelOne.swift in Sources */,
+				AA2362AE2489760C007C40B3 /* Level1_1.swift in Sources */,
 				AA251FA22486F88900E385F7 /* NextLevelLabel.swift in Sources */,
 				AA251FA02486F66700E385F7 /* LevelManager.swift in Sources */,
 				AAD5A2112485F53C0065FEED /* LevelNine.swift in Sources */,
@@ -364,18 +368,18 @@
 				AA44246D2484735B00D09271 /* LevelEight.swift in Sources */,
 				AA7736A124832533007EAAA2 /* LevelSix.swift in Sources */,
 				AA847BE3247C259B0037CC16 /* ToggleSwitch.swift in Sources */,
-				AA84150D2489A97300707B7F /* WorldOneLevelFour.swift in Sources */,
+				AA84150D2489A97300707B7F /* Level1_4.swift in Sources */,
 				AA8C3FE62481B2370071093D /* StartAndResetLabel.swift in Sources */,
 				AA2362B0248979FB007C40B3 /* TutorialLabel.swift in Sources */,
 				AAF6CAF52480A35E00207E2A /* GhostBall.swift in Sources */,
-				AA2362B2248981B8007C40B3 /* WorldOneLevelTwo.swift in Sources */,
+				AA2362B2248981B8007C40B3 /* Level1_2.swift in Sources */,
 				AA847BDB247C13740037CC16 /* BombBall.swift in Sources */,
 				AAF2CCA7247B6CDF00AF3AD0 /* Goal.swift in Sources */,
 				AA7A81212479919E0028D100 /* AppDelegate.swift in Sources */,
 				AA847BD9247C0CAB0037CC16 /* HeroBall.swift in Sources */,
 				AA251F9E2486F24200E385F7 /* LevelTen.swift in Sources */,
 				AA5C0B132481D649006BFECE /* Level.swift in Sources */,
-				AA84150B2489A79300707B7F /* WorldOneLevelThree.swift in Sources */,
+				AA84150B2489A79300707B7F /* Level_1_3.swift in Sources */,
 				AA018E3A2482D39100FF1BF0 /* LevelFive.swift in Sources */,
 				AA847BE9247C43D60037CC16 /* LevelOne.swift in Sources */,
 			);

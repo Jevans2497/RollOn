@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class WorldOneLevelTwo: Level {
+class Level1_2: Level {
     
     override func setupLevel() {
         name = "Level 1-2:\nIt's Rewind Time"

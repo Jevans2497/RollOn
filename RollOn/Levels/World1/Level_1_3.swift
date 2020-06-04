@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class WorldOneLevelThree: Level {
+class Level1_3: Level {
     
     override func setupLevel() {
         name = "Level 1-3:\nTwo steps back..."

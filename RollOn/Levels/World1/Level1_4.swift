@@ -9,14 +9,14 @@
 import Foundation
 import SpriteKit
 
-class WorldOneLevelFour: Level {
+class Level1_4: Level {
     
     override func setupLevel() {
         name = "I'll think of it later"
         setupBackground()
         
         let hero = HeroBall()
-        hero.position = CGPoint(x: -400, y: -300)
+        hero.position = CGPoint(x: -350, y: -250)
         allObjects.append(hero)
     }
 }

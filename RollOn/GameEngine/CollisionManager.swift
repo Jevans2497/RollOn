@@ -19,12 +19,21 @@ class CollisionManager {
     
     func handleCollision(nodeA: SKNode, nodeB: SKNode) {
         if let nodeAIsBall = nodeA.name?.contains("ball"), let nodeBIsBall = nodeB.name?.contains("ball") {
-            //Because the contact test masks are set not to detect ball to ball collisions, we don't need to check for it
-            if nodeAIsBall {
+            if nodeAIsBall && nodeBIsBall {
+                ballToBallCollisionOccured(ball1: nodeA as! Ball, ball2: nodeB as! Ball)
+            } else if nodeAIsBall {
                 collisionOccured(ball: nodeA as! Ball, otherObject: nodeB)
             } else if nodeBIsBall {
                 collisionOccured(ball: nodeB as! Ball, otherObject: nodeA)
             }
+        }
+    }
+    
+    func ballToBallCollisionOccured(ball1: Ball, ball2: Ball) {
+        let ball1BallType = ball1.ballType
+        let ball2BallType = ball2.ballType
+        if ball1BallType == .Ghost || ball2BallType == .Ghost {
+            ghostBallCollision(ball1: ball1, ball2: ball2)
         }
     }
     
@@ -40,6 +49,14 @@ class CollisionManager {
             bouncerCollision(bouncer: otherObject as! Bouncer, ball: ball)
         default:
             print("Collision occured of unknown type")
+        }
+    }
+    
+    func ghostBallCollision(ball1: Ball, ball2: Ball) {
+        if ball1.ballType == .Ghost && ball2.ballType != .Ghost {
+            ball2.ghostBallCollision()
+        } else if ball1.ballType != .Ghost && ball2.ballType == .Ghost {
+            ball1.ghostBallCollision()
         }
     }
     
