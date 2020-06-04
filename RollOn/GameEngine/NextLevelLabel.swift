@@ -15,8 +15,8 @@ class NextLevelLabel: SKLabelNode {
         super.init()
         text = "Next Level"
         zPosition = 1000
-        position = CGPoint(x: 420.0, y: 300.0)
-        fontName = "Chalkduster"
+        position = CGPoint(x: 400.0, y: 300.0)
+        fontName = "Futura-Medium"
     }
     
     required init?(coder aDecoder: NSCoder) {

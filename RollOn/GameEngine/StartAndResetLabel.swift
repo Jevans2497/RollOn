@@ -16,7 +16,8 @@ class StartAndResetLabel: SKLabelNode {
         text = "Start"
         zPosition = 1000
         position = CGPoint(x: -420.0, y: 300.0)
-        fontName = "Chalkduster"
+        fontName = "Futura-Medium"
+        fontSize = 40
     }
     
     func shouldStart() -> Bool {

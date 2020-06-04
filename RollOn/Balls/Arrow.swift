@@ -14,14 +14,18 @@ class Arrow: SKShapeNode {
     var pathToDraw = CGMutablePath()
     var ballLocation = CGPoint(x: 0.0, y: 0.0)
     var touchLocation = CGPoint(x: 0.0, y: 0.0) {
-        didSet {
-            drawArrow()
-        }
+        didSet { drawArrow() }
     }
+    var arrowColor = SKColor.red
     
     override init() {
         super.init()
         name = "arrow"
+    }
+    
+    convenience init(arrowColor: SKColor) {
+        self.init()
+        self.arrowColor = arrowColor
     }
     
     func drawArrow() {
@@ -30,7 +34,7 @@ class Arrow: SKShapeNode {
         pathToDraw.addLine(to: touchLocation)
         drawArrowWings()
         path = pathToDraw
-        strokeColor = SKColor.red
+        strokeColor = arrowColor
         lineWidth = 5.0
         zPosition = 40
     }
