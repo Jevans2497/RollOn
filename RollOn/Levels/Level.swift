@@ -13,6 +13,7 @@ class Level {
     
     var allObjects = Array<Any>()
     var name = "Level"
+    var hasSeenName = false
     
     init() {
         setupLevel()
@@ -28,5 +29,27 @@ class Level {
         background.blendMode = .replace
         background.zPosition = -1
         allObjects.append(background)
+    }
+    
+    func displayName() {
+        let nameBackground = makeNameBackground()
+        let nameLabel = makeNameLabel()
+        
+        nameBackground.addChild(nameLabel)
+        allObjects.append(nameBackground)
+        hasSeenName = true
+    }
+    
+    private func makeNameBackground() -> SKShapeNode {
+        let nameBackground = SKShapeNode(rectOf: CGSize(width: 1200, height: 150))
+        nameBackground.fillColor = .black
+        nameBackground.alpha = 0.7
+        nameBackground.zPosition = 10000
+        nameBackground.position = CGPoint(x: 0, y: 0)
+        return nameBackground
+    }
+    
+    private func makeNameLabel() -> SKLabelNode {
+        return SKLabelNode(text: name)
     }
 }

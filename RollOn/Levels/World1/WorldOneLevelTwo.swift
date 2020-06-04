@@ -12,7 +12,8 @@ import SpriteKit
 class WorldOneLevelTwo: Level {
     
     override func setupLevel() {
-        name = "Level 1-2: It's Rewind Time"
+        name = "Level 1-2:\nIt's Rewind Time"
+        
         setupBackground(imageName: "mountain.jpg")
         
         let hero = HeroBall()

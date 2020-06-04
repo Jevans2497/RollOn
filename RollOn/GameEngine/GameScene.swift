@@ -49,6 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ToggleSwitchCounterDelegate,
     
     func setupLevel() {
         level.setupLevel()
+        if !level.hasSeenName { level.displayName() }
         for object in level.allObjects {
             let node = object as! SKNode
             addChild(node)

@@ -12,7 +12,8 @@ import SpriteKit
 class WorldOneLevelOne: Level {
     
     override func setupLevel() {
-        name = "Level 1-1: Baby Steps"
+        name = "Level 1-1:\nBaby Steps"
+//        displayName()
         
         setupBackground(imageName: "mountain.jpg")
         
