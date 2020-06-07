@@ -31,12 +31,28 @@ class Level2_1: Level {
         wallLeft.position = CGPoint(x: -400, y: 200)
         allObjects.append(wallLeft)
         
-        let wallTop = Wall(size: CGSize(width: 830, height: 30))
-        wallTop.position = CGPoint(x: 0, y: 260)
+        let wallTop = Wall(size: CGSize(width: 1030, height: 30))
+        wallTop.position = CGPoint(x: 100, y: 260)
         allObjects.append(wallTop)
         
-        let wallBottom = Wall(size: CGSize(width: 630, height: 30))
-        wallBottom.position = CGPoint(x: 100, y: 140)
+        let wallBottom = Wall(size: CGSize(width: 830, height: 30))
+        wallBottom.position = CGPoint(x: 200, y: 140)
         allObjects.append(wallBottom)
+        
+        let wallDivider = Wall(size: CGSize(width: 15, height: 100))
+        wallDivider.position = CGPoint(x: -300, y: 200)
+        allObjects.append(wallDivider)
+        
+        let redToggleSwitch = ToggleSwitch(acceptedBallType: .Bomb)
+        redToggleSwitch.position = CGPoint(x: -350, y: 200)
+        allObjects.append(redToggleSwitch)
+        
+        let redWall = ToggleWall(acceptedBallType: .Bomb, size: CGSize(width: 15, height: 100))
+        redWall.position = CGPoint(x: -200, y: 200)
+        allObjects.append(redWall)
+        
+        let tutorial = TutorialLabel().makeLabel(tutorialString: "After start, click on the red ball")
+        tutorial.position = CGPoint(x: 100, y: -215)
+        allObjects.append(tutorial)
     }
 }
