@@ -21,7 +21,7 @@ class HeroBall: Ball {
     
     override func setupPhysicsBody() {
         physicsBody?.categoryBitMask = HeroBallCategory
-        physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchBlueCategory | SpikesCategory | BouncerCategory | GhostBallCategory
+        physicsBody?.contactTestBitMask = GoalCategory | ToggleSwitchBlueCategory | SpikesCategory | BouncerCategory | GhostBallCategory | AbsorbBallCategory
         physicsBody?.collisionBitMask = BombBallCategory | WallCategory | ToggleSwitchRedCategory | ToggleWallCategory | ToggleSwitchGrayCategory
         physicsBody?.fieldBitMask = BombBallSecondaryEffectFieldCategory
     }

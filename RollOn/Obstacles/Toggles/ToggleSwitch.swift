@@ -42,6 +42,8 @@ class ToggleSwitch : SKShapeNode {
             return ToggleSwitchRedCategory
         case .Ghost:
             return ToggleSwitchGrayCategory
+        case .Absorb:
+            return ToggleSwitchWhiteCategory
         }
     }
     
@@ -53,6 +55,8 @@ class ToggleSwitch : SKShapeNode {
             return BombBallCategory
         case .Ghost:
             return GhostBallCategory
+        case .Absorb:
+            return AbsorbBallCategory
         }
     }
     
@@ -73,6 +77,8 @@ class ToggleSwitch : SKShapeNode {
             return UIColor.red
         case .Ghost:
             return UIColor.gray
+        case .Absorb:
+            return UIColor.white
         }
     }
 }

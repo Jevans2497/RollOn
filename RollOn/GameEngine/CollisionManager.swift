@@ -35,6 +35,9 @@ class CollisionManager {
         if ball1BallType == .Ghost || ball2BallType == .Ghost {
             ghostBallCollision(ball1: ball1, ball2: ball2)
         }
+        if ball1BallType == .Absorb || ball2BallType == .Absorb {
+            absorbBallCollision(ball1: ball1, ball2: ball2)
+        }
     }
     
     func collisionOccured(ball: Ball, otherObject: SKNode) {
@@ -57,6 +60,16 @@ class CollisionManager {
             ball2.ghostBallCollision()
         } else if ball1.ballType != .Ghost && ball2.ballType == .Ghost {
             ball1.ghostBallCollision()
+        }
+    }
+    
+    func absorbBallCollision(ball1: Ball, ball2: Ball) {
+        if ball1.ballType == .Absorb {
+            let absorbBall = ball1 as! AbsorbBall
+            absorbBall.absorb(ball: ball2)
+        } else {
+            let absorbBall = ball2 as! AbsorbBall
+            absorbBall.absorb(ball: ball1)
         }
     }
     

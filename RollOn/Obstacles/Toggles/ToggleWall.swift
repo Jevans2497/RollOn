@@ -40,6 +40,8 @@ class ToggleWall: SKShapeNode {
             return UIColor.red
         case .Ghost:
             return UIColor.gray
+        case .Absorb:
+            return UIColor.white
         }
     }
 }

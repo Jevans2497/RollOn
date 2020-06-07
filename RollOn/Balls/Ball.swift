@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-enum BallType { case Hero, Bomb, Ghost }
+enum BallType { case Hero, Bomb, Ghost, Absorb }
 
 class Ball: SKSpriteNode {
     
@@ -117,7 +117,9 @@ class Ball: SKSpriteNode {
                 ballColor = "Red"
             case .Ghost:
                 ballColor = "Grey"
-        }
+            case .Absorb:
+                ballColor = "Cyan"
+            }
         return SKTexture(imageNamed: "ball\(ballColor)")
     }
     
