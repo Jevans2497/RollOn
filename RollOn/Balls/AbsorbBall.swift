@@ -28,9 +28,11 @@ class AbsorbBall: Ball {
     }
     
     func absorb(ball: Ball) {
-        increaseSize()
-        if !absorbedBalls.contains(ball) { absorbedBalls.append(ball) }
-        ball.destroy()
+        if !absorbedBalls.contains(ball) {
+            absorbedBalls.append(ball)
+            increaseSize()
+            ball.destroy()
+        }
     }
     
     func increaseSize() {
@@ -46,19 +48,32 @@ class AbsorbBall: Ball {
     override func runSecondaryEffect() {
         if let ballToEject = absorbedBalls.last {
             decreaseSize()
-            recreateBall(ball: ballToEject)
+            ejectBall(ball: ballToEject)
             absorbedBalls.removeLast()
         }
     }
     
-    func recreateBall(ball: Ball) {
-        let newBall = Ball(ballType: ball.ballType)
-        newBall.position = CGPoint(x: 0, y: 0)
-        newBall.physicsBody?.isDynamic = true
-        parent?.addChild(newBall)
-        newBall.physicsBody?.applyForce(CGVector(dx: 1000, dy: 0))
+    func ejectBall(ball: Ball) {
+        let ballToEject = Ball(ballType: ball.ballType)
+        ballToEject.position = ejectionPosition()
+        ballToEject.physicsBody?.applyImpulse(calculateEjectionVector(ballToEject: ballToEject))
+        parent?.addChild(ballToEject)
     }
     
+    func ejectionPosition() -> CGPoint {
+        let angle = calculateEjectionAngle()
+        let adjustedX = CGFloat(cos(angle) * size.width) + position.x
+        let adjustedY = CGFloat(sin(angle) * size.height) + position.y
+        return CGPoint(x: adjustedX, y: adjustedY)
+    }
+    
+    func calculateEjectionVector(ballToEject: Ball) -> CGVector {
+        let xDif = ballToEject.position.x - position.x
+        let yDif = ballToEject.position.y - position.y
+        return CGVector(dx: xDif * -1000, dy: yDif * -1000)
+    }
+    
+    //The direction that the absorb ball is currently moving in (radians)
     func calculateEjectionAngle() -> CGFloat {
         let velocity = physicsBody?.velocity
         let startX = position.x
