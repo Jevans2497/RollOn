@@ -56,8 +56,8 @@ class AbsorbBall: Ball {
     func ejectBall(ball: Ball) {
         let ballToEject = Ball(ballType: ball.ballType)
         ballToEject.position = ejectionPosition()
-        ballToEject.physicsBody?.applyImpulse(calculateEjectionVector(ballToEject: ballToEject))
         parent?.addChild(ballToEject)
+        ballToEject.physicsBody?.applyForce(calculateEjectionVector(ballToEject: ballToEject))
     }
     
     func ejectionPosition() -> CGPoint {
@@ -68,9 +68,9 @@ class AbsorbBall: Ball {
     }
     
     func calculateEjectionVector(ballToEject: Ball) -> CGVector {
-        let xDif = ballToEject.position.x - position.x
-        let yDif = ballToEject.position.y - position.y
-        return CGVector(dx: xDif * -1000, dy: yDif * -1000)
+        let velocityX = physicsBody?.velocity.dx
+        let velocityY = physicsBody?.velocity.dy
+        return CGVector(dx: velocityX! * 10, dy: velocityY! * 10)
     }
     
     //The direction that the absorb ball is currently moving in (radians)
