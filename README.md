@@ -9,5 +9,3 @@ RollOn is a physics based puzzle game I created. The goal of the game is essenti
 ![Union Jack Arrows](Screenshots/UnionJackArrows.png?raw=true)
 
 ![Union Jack Shot](Screenshots/UnionJackShot.png?raw=true)
-
-![Think Again](Screenshots/ThinkAgain.png?raw=true)
