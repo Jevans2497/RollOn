@@ -19,19 +19,19 @@ class LevelManager {
     }
     
     func makeLevels() {
-//        makeWorldOne()
+        makeWorldOne()
 //        makeWorldTwo()
-        makeWorldFour()
+//        makeWorldFour()
 //        makeOriginalLevels()
     }
     
     func makeWorldOne() {
 //        levels.append(Level1_1())
 //        levels.append(Level1_2())
-//        levels.append(Level1_3())
+        levels.append(Level1_3())
 //        levels.append(Level1_4())
 //        levels.append(Level1_5())
-        levels.append(Level1_6())
+//        levels.append(Level1_6())
     }
     
     func makeWorldTwo() {
@@ -43,16 +43,16 @@ class LevelManager {
     }
     
     func makeOriginalLevels() {
-        levels.append(LevelOne())
-        levels.append(LevelTwo())
-        levels.append(LevelThree())
-        levels.append(LevelFour())
-        levels.append(LevelFive())
-        levels.append(LevelSix())
-        levels.append(LevelSeven())
-        levels.append(LevelEight())
-        levels.append(LevelNine())
-        levels.append(LevelTen())
+//        levels.append(LevelOne())
+//        levels.append(LevelTwo())
+//        levels.append(LevelThree())
+//        levels.append(LevelFour())
+//        levels.append(LevelFive())
+//        levels.append(LevelSix())
+//        levels.append(LevelSeven())
+//        levels.append(LevelEight())
+//        levels.append(LevelNine())
+//        levels.append(LevelTen())
     }
     
     func getCurrentLevel() -> Level {
